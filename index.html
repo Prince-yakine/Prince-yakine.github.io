@@ -29,6 +29,16 @@ footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.88rem;b
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}.reveal.visible{opacity:1;transform:translateY(0)}
 @media(max-width:760px){header{padding:.85rem 5%}.menu{display:block}nav{display:none;position:absolute;left:0;right:0;top:100%;padding:1rem 5%;background:var(--bg);border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start;gap:1rem}nav.open{display:flex}.hero{min-height:72vh}main{padding:0 1.1rem}section{padding:4rem 0}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+/* Bandeau défilant des domaines d'activité */
+.ticker{overflow:hidden;width:100%;background:#11130f;border-top:1px solid #3b301a;border-bottom:1px solid #3b301a;padding:.95rem 0}
+.ticker-track{display:flex;width:max-content;animation:ticker-scroll 28s linear infinite;will-change:transform}
+.ticker-group{display:flex;align-items:center;flex:0 0 auto;gap:1.8rem;padding-right:1.8rem;white-space:nowrap}
+.ticker-item{color:var(--gold);font-size:.8rem;font-weight:800;letter-spacing:1.8px;text-transform:uppercase}
+.ticker-item::after{content:"✦";color:#fff;margin-left:1.8rem}
+.ticker:hover .ticker-track{animation-play-state:paused}
+@keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+
 </style>
 </head>
 <body>
@@ -39,6 +49,26 @@ footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.88rem;b
 <a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#competences">Compétences</a><a href="#parcours">Parcours</a><a href="#projets">Projets</a><a href="#contact">Contact</a>
 </nav>
 </header>
+<div class="ticker" aria-label="Mes domaines d'activité">
+<div class="ticker-track">
+<div class="ticker-group">
+<span class="ticker-item">Créativité</span>
+<span class="ticker-item">Entrepreneuriat</span>
+<span class="ticker-item">Communication</span>
+<span class="ticker-item">Technologie</span>
+<span class="ticker-item">Sport</span>
+<span class="ticker-item">Art &amp; culture</span>
+</div>
+<div class="ticker-group" aria-hidden="true">
+<span class="ticker-item">Créativité</span>
+<span class="ticker-item">Entrepreneuriat</span>
+<span class="ticker-item">Communication</span>
+<span class="ticker-item">Technologie</span>
+<span class="ticker-item">Sport</span>
+<span class="ticker-item">Art &amp; culture</span>
+</div>
+</div>
+</div>
 <main>
 <section id="accueil" class="hero">
 <div class="hero-inner">
