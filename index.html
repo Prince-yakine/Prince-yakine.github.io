@@ -1,204 +1,114 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rauch Yakine TCHONTCHOKO | Portfolio</title>
-  <style>
-    :root {
-      --gold: #f7b928;
-      --bg: #080b0b;
-      --card: #121615;
-      --text: #f5f5f5;
-      --muted: #b8bfbb;
-    }
-    * { box-sizing: border-box; scroll-behavior: smooth; }
-    body {
-      margin: 0; background: var(--bg); color: var(--text);
-      font-family: Arial, sans-serif; line-height: 1.7;
-    }
-    a { color: inherit; text-decoration: none; }
-    header {
-      position: sticky; top: 0; z-index: 10;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 16px 6%; background: #080b0bf2;
-      border-bottom: 1px solid #252b28;
-    }
-    .logo { font-size: 27px; font-weight: bold; }
-    .logo span, h1 span, h2 span { color: var(--gold); }
-    nav { display: flex; gap: 18px; flex-wrap: wrap; }
-    nav a:hover { color: var(--gold); }
-    .hero {
-      min-height: 75vh; display: flex; align-items: center;
-      padding: 70px 8%; background:
-      radial-gradient(ellipse at 80% 40%, #45300e 0%, transparent 40%);
-    }
-    .hero-content { max-width: 760px; }
-    .eyebrow { color: var(--gold); letter-spacing: 3px; }
-    h1 { font-size: clamp(38px, 7vw, 76px); line-height: 1.08; margin: 12px 0; }
-    h2 { font-size: 30px; }
-    .lead { font-size: 19px; color: var(--muted); }
-    .buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
-    .btn {
-      padding: 12px 20px; border: 1px solid var(--gold);
-      border-radius: 8px; display: inline-block; cursor: pointer;
-      transition: .25s;
-    }
-    .btn.primary { background: var(--gold); color: #111; font-weight: bold; }
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 25px #f7b92830; }
-    section { padding: 60px 8%; }
-    .muted { color: var(--muted); }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 18px; }
-    .card {
-      background: var(--card); padding: 23px; border: 1px solid #2a302c;
-      border-radius: 14px; transition: .25s;
-    }
-    .card:hover { transform: translateY(-5px); border-color: var(--gold); }
-    .card h3 { color: var(--gold); }
-    .tag {
-      display: inline-block; color: var(--gold); border: 1px solid #66501e;
-      padding: 4px 9px; border-radius: 20px; font-size: 12px; margin: 3px;
-    }
-    .skill { margin: 18px 0; }
-    .bar { height: 7px; background: #303631; border-radius: 10px; overflow: hidden; }
-    .bar span { display: block; height: 100%; background: var(--gold); width: 0; transition: width 1.3s; }
-    .contact { background: #111513; }
-    footer { padding: 25px; text-align: center; color: var(--muted); border-top: 1px solid #292e2b; }
-    #top { position: fixed; bottom: 20px; right: 18px; display: none; }
-    .reveal { opacity: 0; transform: translateY(20px); transition: .7s; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    @media(max-width:650px) {
-      header { align-items: flex-start; gap: 12px; flex-direction: column; }
-      nav { gap: 12px; font-size: 14px; }
-      .hero { min-height: 65vh; padding: 55px 7%; }
-      section { padding: 45px 7%; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio de Yakine Rauch TCHONTCHOKO : communication, création audiovisuelle, humour et développement numérique.">
+<title>Yakine Rauch TCHONTCHOKO — Portfolio & CV</title>
+<style>
+:root{--bg:#0c0d12;--surface:#151821;--card:#1c202d;--gold:#f59e0b;--glow:rgba(245,158,11,.14);--text:#f3f4f6;--muted:#9ca3af;--border:#2a2f42}
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;line-height:1.65}
+a{color:inherit}
+header{position:sticky;top:0;z-index:100;background:rgba(12,13,18,.94);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;padding:1rem 6%;border-bottom:1px solid var(--border)}
+.logo{font-weight:900;font-size:1.4rem;text-decoration:none}.logo span,h1 span,h2 span{color:var(--gold)}
+nav{display:flex;gap:1.3rem;align-items:center}nav a{text-decoration:none;color:var(--muted);font-size:.92rem}nav a:hover{color:var(--gold)}
+.menu{display:none;background:none;color:var(--text);border:1px solid var(--border);padding:.45rem .7rem;border-radius:8px;font-size:1rem}
+main{max-width:1150px;margin:auto;padding:0 1.5rem}section{padding:5.5rem 0;border-bottom:1px solid var(--border)}section:last-child{border:0}
+.hero{min-height:82vh;display:flex;align-items:center;background:radial-gradient(ellipse at 90% 40%,rgba(245,158,11,.12),transparent 42%)}
+.hero-inner{max-width:800px}.badge{display:inline-block;background:var(--glow);color:var(--gold);padding:.4rem .85rem;border:1px solid rgba(245,158,11,.3);border-radius:30px;font-size:.78rem;font-weight:700;letter-spacing:1px;margin-bottom:1.2rem}
+h1{font-size:clamp(2.7rem,7vw,5rem);line-height:1.07;font-weight:900;letter-spacing:-1.5px;margin-bottom:1.2rem}h2{font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.2;margin-bottom:1.4rem;letter-spacing:-.6px}
+.subtitle{font-size:clamp(1.05rem,2.3vw,1.3rem);font-weight:650;margin-bottom:1rem}.desc,.muted{color:var(--muted)}.desc{font-size:1.08rem;max-width:700px;margin-bottom:2rem}
+.buttons{display:flex;gap:.8rem;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.8rem 1.2rem;border-radius:9px;font-weight:700;text-decoration:none;border:1px solid var(--border);transition:.22s}.btn:hover{transform:translateY(-3px)}.primary{background:var(--gold);color:#111;border-color:var(--gold)}.outline:hover{border-color:var(--gold);color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1.2rem;margin-top:2rem}.card,.skill-card{background:var(--surface);padding:1.6rem;border:1px solid var(--border);border-radius:15px;transition:.25s}.card:hover,.skill-card:hover{border-color:var(--gold);transform:translateY(-3px)}.card h3,.skill-card h3{color:var(--gold);font-size:1.15rem;margin-bottom:.65rem}.card p,.card li{color:var(--muted);font-size:.95rem}.tag{display:inline-block;color:var(--gold);border:1px solid rgba(245,158,11,.35);border-radius:20px;padding:.2rem .6rem;font-size:.75rem;margin-bottom:.7rem}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1.2rem;margin-top:2rem}.skill{margin:1.1rem 0}.skill-name{display:flex;justify-content:space-between;gap:.8rem;font-size:.92rem;margin-bottom:.45rem}.bar{height:7px;background:var(--border);border-radius:9px;overflow:hidden}.bar span{display:block;height:100%;width:0;background:var(--gold);border-radius:9px;transition:width 1s}
+.timeline{margin:2rem 0 0 1rem;padding-left:1.5rem;border-left:2px solid var(--border)}.timeline-item{position:relative;margin-bottom:2rem}.timeline-item:before{content:"";position:absolute;left:-1.95rem;top:.35rem;width:11px;height:11px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)}.date{color:var(--gold);font-size:.8rem;font-weight:800;letter-spacing:1px}.timeline h3{margin:.25rem 0}.timeline p{color:var(--muted);font-size:.95rem}
+.contact{text-align:center}.contact .desc{margin:0 auto 2rem}.contact .buttons{justify-content:center;margin-bottom:1.5rem}
+footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.88rem;border-top:1px solid var(--border)}
+#top{position:fixed;right:1.2rem;bottom:1.2rem;width:44px;height:44px;border-radius:50%;display:none;align-items:center;justify-content:center;box-shadow:0 4px 15px #0006}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:760px){header{padding:.85rem 5%}.menu{display:block}nav{display:none;position:absolute;left:0;right:0;top:100%;padding:1rem 5%;background:var(--bg);border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start;gap:1rem}nav.open{display:flex}.hero{min-height:72vh}main{padding:0 1.1rem}section{padding:4rem 0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
 </head>
 <body>
 <header>
-  <a class="logo" href="#accueil">YR<span>.</span></a>
-  <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#apropos">À propos</a>
-    <a href="#competences">Compétences</a>
-    <a href="#projets">Projets</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<a class="logo" href="#accueil" aria-label="Accueil">YR<span>.</span></a>
+<button class="menu" id="menuBtn" aria-expanded="false" aria-controls="nav">☰ Menu</button>
+<nav id="nav" aria-label="Navigation principale">
+<a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#competences">Compétences</a><a href="#parcours">Parcours</a><a href="#projets">Projets</a><a href="#contact">Contact</a>
+</nav>
 </header>
-
 <main>
-  <section class="hero" id="accueil">
-    <div class="hero-content">
-      <div class="eyebrow">CRÉATIVITÉ · COMMUNICATION · TECHNOLOGIE</div>
-      <h1>Yakine Rauch<br><span>TCHONTCHOKO</span></h1>
-      <p class="lead">Communicateur · Créateur de contenu · Scénariste · Développeur web · Humoriste</p>
-      <p class="muted">Je transforme les idées en histoires, les histoires en projets et les projets en solutions concrètes.</p>
-      <div class="buttons">
-        <a class="btn primary" href="#projets">Découvrir mes projets ↗</a>
-        <a class="btn" href="#contact">Me contacter</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="apropos" class="reveal">
-    <h2>À propos <span>de moi</span></h2>
-    <p class="muted">Je suis un créatif polyvalent basé à Kara, au Togo. À la croisée de la communication, de l'art et du numérique, je développe des projets qui racontent des histoires, rapprochent les communautés et répondent à des besoins concrets.</p>
-    <p class="muted">Mon parcours associe création audiovisuelle, humour, développement web, communication digitale et engagement social.</p>
-    <div class="grid">
-      <div class="card"><h3>🎬 Audiovisuel</h3><p>Scénarisation, cinéma, photographie et création de contenu.</p></div>
-      <div class="card"><h3>📣 Communication</h3><p>Stratégie digitale, storytelling, visibilité et animation de communauté.</p></div>
-      <div class="card"><h3>💻 Numérique</h3><p>Développement web, UI/UX et exploration de l'intelligence artificielle.</p></div>
-    </div>
-  </section>
-
-  <section id="competences" class="reveal">
-    <h2>Mes <span>compétences</span></h2>
-    <div class="grid">
-      <div class="card">
-        <div class="skill">Communication & stratégie<div class="bar"><span data-width="90%"></span></div></div>
-        <div class="skill">Création de contenu<div class="bar"><span data-width="90%"></span></div></div>
-        <div class="skill">Scénarisation<div class="bar"><span data-width="85%"></span></div></div>
-      </div>
-      <div class="card">
-        <div class="skill">Développement web<div class="bar"><span data-width="75%"></span></div></div>
-        <div class="skill">UI/UX design<div class="bar"><span data-width="70%"></span></div></div>
-        <div class="skill">IA et outils numériques<div class="bar"><span data-width="65%"></span></div></div>
-      </div>
-    </div>
-    <p class="muted">Les niveaux sont indicatifs et pourront être ajustés selon tes compétences réelles.</p>
-  </section>
-
-  <section id="projets" class="reveal">
-    <h2>Mes projets <span>phares</span></h2>
-    <p class="muted">Quelques initiatives qui reflètent mon univers créatif et entrepreneurial.</p>
-    <div class="grid">
-      <article class="card">
-        <span class="tag">Entrepreneuriat</span>
-        <h3>LavAut</h3>
-        <p>Projet de service de lavage automobile digitalisé à Kara, avec une ambition de simplifier la réservation et le suivi des prestations.</p>
-        <a class="btn" href="#contact">Parlons du projet ↗</a>
-      </article>
-      <article class="card">
-        <span class="tag">Culture & humour</span>
-        <h3>Yakine Stand Up Club</h3>
-        <p>Un espace de création, de scène et d'expression artistique autour du stand-up et de l'humour engagé.</p>
-        <a class="btn" href="#contact">En savoir plus ↗</a>
-      </article>
-      <article class="card">
-        <span class="tag">Numérique & éducation</span>
-        <h3>AKAG</h3>
-        <p>Projet numérique éducatif à présenter avec ses objectifs, ses fonctionnalités et ses réalisations vérifiées.</p>
-        <a class="btn" href="#contact">Découvrir ↗</a>
-      </article>
-      <article class="card">
-        <span class="tag">Innovation</span>
-        <h3>Vanhub</h3>
-        <p>Concept de plateforme de partage et d'amélioration de créations artistiques, scénarios et sketches.</p>
-        <a class="btn" href="#contact">Découvrir ↗</a>
-      </article>
-    </div>
-  </section>
-
-  <section id="experiences" class="reveal">
-    <h2>Formations & <span>parcours</span></h2>
-    <div class="grid">
-      <div class="card"><h3>Sciences du langage</h3><p class="muted">Université de Kara — licence en sciences du langage.</p></div>
-      <div class="card"><h3>Développement web</h3><p class="muted">Formation D-CLIC, avec accompagnement du projet numérique.</p></div>
-      <div class="card"><h3>IT & cybersécurité</h3><p class="muted">Formation Cisco IT Support et parcours de sensibilisation à la cybersécurité.</p></div>
-      <div class="card"><h3>Intelligence artificielle</h3><p class="muted">Apprentissage autour de l'IA et des grands modèles de langage.</p></div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact reveal">
-    <h2>Construisons quelque chose <span>ensemble.</span></h2>
-    <p class="muted">Un projet créatif, une collaboration ou une opportunité professionnelle ? Contacte-moi.</p>
-    <div class="buttons">
-      <a class="btn primary" href="mailto:TON-EMAIL@EXEMPLE.COM">M'envoyer un e-mail ↗</a>
-      <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
-    </div>
-    <p class="muted">Kara, Togo · Communication · Art · Audiovisuel · Numérique</p>
-  </section>
+<section id="accueil" class="hero">
+<div class="hero-inner">
+<div class="badge">COMMUNICATION · CULTURE · NUMÉRIQUE</div>
+<h1>Yakine Rauch<br><span>TCHONTCHOKO</span></h1>
+<p class="subtitle">Communicateur · Créateur de contenu · Humoriste & scénariste · Développeur web</p>
+<p class="desc">Basé à Kara, au Togo, je combine communication digitale, création audiovisuelle, art oratoire et innovation numérique pour faire vivre des idées et des projets à impact culturel et social.</p>
+<div class="buttons"><a class="btn primary" href="#projets">Découvrir mes projets ↗</a><a class="btn outline" href="#contact">Me contacter</a></div>
+</div>
+</section>
+<section id="apropos" class="reveal">
+<h2>À propos <span>de moi</span></h2>
+<p class="muted">Mon parcours associe une formation universitaire en sciences du langage, le développement web et mobile, la communication digitale, l'audiovisuel et l'humour. J'aime créer des passerelles entre les idées, les communautés et les outils numériques pour concevoir des projets utiles et raconter des histoires qui marquent.</p>
+<div class="grid">
+<article class="card"><h3>🎬 Art & audiovisuel</h3><p>Scénarisation, cinéma, photographie, création de contenu et performance scénique.</p></article>
+<article class="card"><h3>📣 Communication</h3><p>Communication digitale, storytelling, marketing, animation de communauté et organisation d'événements.</p></article>
+<article class="card"><h3>💻 Tech & innovation</h3><p>Développement web et mobile, UI/UX design, outils numériques et apprentissage de la cybersécurité et de l'IA.</p></article>
+</div>
+</section>
+<section id="competences" class="reveal">
+<h2>Mes <span>compétences</span></h2>
+<div class="skill-grid">
+<div class="skill-card"><h3>Communication & création</h3>
+<div class="skill"><div class="skill-name"><span>Communication digitale</span><span>90%</span></div><div class="bar"><span data-width="90%"></span></div></div>
+<div class="skill"><div class="skill-name"><span>Création de contenu</span><span>90%</span></div><div class="bar"><span data-width="90%"></span></div></div>
+<div class="skill"><div class="skill-name"><span>Scénarisation & prise de parole</span><span>95%</span></div><div class="bar"><span data-width="95%"></span></div></div>
+</div>
+<div class="skill-card"><h3>Développement & numérique</h3>
+<div class="skill"><div class="skill-name"><span>HTML / CSS</span><span>90%</span></div><div class="bar"><span data-width="90%"></span></div></div>
+<div class="skill"><div class="skill-name"><span>JavaScript / PHP / Python</span><span>80%</span></div><div class="bar"><span data-width="80%"></span></div></div>
+<div class="skill"><div class="skill-name"><span>UI/UX & outils numériques</span><span>85%</span></div><div class="bar"><span data-width="85%"></span></div></div>
+</div>
+</div><p class="muted" style="font-size:.82rem;margin-top:1rem">Les pourcentages sont des estimations indicatives et peuvent être ajustés.</p>
+</section>
+<section id="parcours" class="reveal">
+<h2>Formations & <span>parcours</span></h2>
+<div class="timeline">
+<div class="timeline-item"><div class="date">2025 — PRÉSENT</div><h3>Projet LavAut & parcours numérique</h3><p>Développement d'un projet de lavage automobile digitalisé et poursuite de formations dans les domaines de la tech et de la cybersécurité.</p></div>
+<div class="timeline-item"><div class="date">2024 — 2025</div><h3>Développement web et mobile</h3><p>Formation D-CLIC avec CUBE et l'Organisation internationale de la Francophonie (OIF).</p></div>
+<div class="timeline-item"><div class="date">2023 — 2025</div><h3>Humour, scène & création audiovisuelle</h3><p>Écriture et interprétation de sketches, activités scéniques et participation à des projets artistiques.</p></div>
+<div class="timeline-item"><div class="date">2021 — 2023</div><h3>Licence en Sciences du langage</h3><p>Université de Kara — formation universitaire en linguistique et étude des langues.</p></div>
+<div class="timeline-item"><div class="date">EXPÉRIENCES ANTÉRIEURES</div><h3>Radio, photographie & engagement associatif</h3><p>Expériences en animation, assistance photographique, organisation culturelle et initiatives citoyennes.</p></div>
+</div>
+</section>
+<section id="projets" class="reveal">
+<h2>Mes projets <span>phares</span></h2><p class="muted">Entrepreneuriat, création artistique et engagement citoyen.</p>
+<div class="grid">
+<article class="card"><span class="tag">Entrepreneuriat</span><h3>LavAut</h3><p>Projet de service de lavage automobile digitalisé à Kara, conçu pour faciliter la réservation et le suivi des prestations.</p><p style="margin-top:1rem"><a class="btn outline" href="https://github.com/Prince-yakine/LavAut" target="_blank" rel="noopener">Voir le projet ↗</a></p></article>
+<article class="card"><span class="tag">Culture & humour</span><h3>Yakine Stand Up Club</h3><p>Initiative de création et de dynamisation de la scène humoristique à Kara, entre stand-up, écriture et humour engagé.</p></article>
+<article class="card"><span class="tag">Engagement citoyen</span><h3>Fier des ODD</h3><p>Participation à une initiative de sensibilisation aux Objectifs de développement durable et à l'engagement communautaire.</p></article>
+<article class="card"><span class="tag">Création numérique</span><h3>Vanhub</h3><p>Concept de plateforme pour partager, faire relire et améliorer des sketches, scénarios et créations artistiques.</p></article>
+</div>
+</section>
+<section id="contact" class="contact reveal">
+<h2>Construisons quelque chose <span>ensemble.</span></h2><p class="desc">Un projet de communication, une collaboration artistique ou une opportunité professionnelle ? Échangeons.</p>
+<div class="buttons"><a class="btn primary" href="mailto:princeyakine2@gmail.com">M'envoyer un e-mail ↗</a><a class="btn outline" href="https://www.linkedin.com/in/prince-reggie-a4501b246" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn outline" href="https://github.com/Prince-yakine" target="_blank" rel="noopener">GitHub ↗</a></div>
+<p class="muted">Kara, Togo · Communication · Art · Audiovisuel · Numérique</p>
+</section>
 </main>
-<footer>© <span id="year"></span> Yakine Rauch TCHONTCHOKO · Portfolio personnel</footer>
+<footer>© <span id="year"></span> Yakine Rauch TCHONTCHOKO · Tous droits réservés.</footer>
 <a id="top" class="btn primary" href="#accueil" aria-label="Retour en haut">↑</a>
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        entry.target.querySelectorAll('[data-width]').forEach(bar => {
-          bar.style.width = bar.dataset.width;
-        });
-      }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  const topButton = document.getElementById('top');
-  window.addEventListener('scroll', () => {
-    topButton.style.display = window.scrollY > 400 ? 'block' : 'none';
-  });
+document.getElementById('year').textContent=new Date().getFullYear();
+const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'✕ Fermer':'☰ Menu';});
+nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰ Menu';}));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');entry.target.querySelectorAll('[data-width]').forEach(bar=>bar.style.width=bar.dataset.width);observer.unobserve(entry.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const topButton=document.getElementById('top');
+window.addEventListener('scroll',()=>{topButton.style.display=window.scrollY>400?'inline-flex':'none';},{passive:true});
 </script>
 </body>
 </html>
