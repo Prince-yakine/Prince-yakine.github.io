@@ -112,6 +112,10 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;letter-spacing:-.045em;ma
 .logo-marquee-group{display:flex;align-items:center;gap:18px;padding-right:18px}
 .programme-logo{width:clamp(190px,23vw,260px);height:126px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;padding:13px 17px;border:1px solid rgba(255,255,255,.12);border-radius:15px;background:#f8f8f8;box-shadow:0 12px 26px rgba(0,0,0,.22);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;overflow:hidden}
 .programme-logo img{display:block;width:100%;height:100%;object-fit:contain}
+.programme-wordmark{position:relative;flex-direction:column;gap:8px;text-align:center;color:#161616}
+.programme-wordmark .wordmark-symbol{display:grid;place-items:center;min-width:48px;height:38px;padding:0 10px;border-radius:9px;background:#151821;color:#f8b923;font-size:1.05rem;font-weight:900;letter-spacing:.04em}
+.programme-wordmark .wordmark-name{max-width:100%;font-size:.78rem;line-height:1.25;font-weight:800;letter-spacing:.01em}
+.programme-wordmark figcaption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 .programme-logo:hover{transform:perspective(700px) rotateY(-5deg) translateY(-4px) scale(1.035);border-color:var(--gold);box-shadow:0 16px 34px rgba(0,0,0,.32),0 0 18px rgba(248,185,35,.12)}
 .programme-logo figcaption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 @keyframes logo-marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -218,17 +222,33 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
     <div class="container programmes-heading">
       <p class="section-kicker">Engagements &amp; collaborations</p>
       <h2>Programmes qui ont marqué <span class="gold">mon parcours</span></h2>
-      <p>Quelques visuels des programmes et initiatives de mon parcours.</p>
+      <p>Formations, initiatives artistiques et engagements qui ont contribué à mon parcours.</p>
     </div>
-    <div class="logo-marquee" role="region" aria-label="Défilement infini des logos des programmes">
+    <div class="logo-marquee" role="region" aria-label="Défilement infini des programmes et organisations">
       <div class="logo-marquee-track">
         <div class="logo-marquee-group">
-          <figure class="programme-logo"><img src="images/Screenshot_20261014-222729_Lite~2.jpg" alt="Programme ou organisation — visuel 1" loading="eager"><figcaption>Programme / organisation</figcaption></figure>
-          <figure class="programme-logo"><img src="images/Screenshot_20261014-223323_Lite~2.jpg" alt="Programme ou organisation — visuel 2" loading="eager"><figcaption>Programme / organisation</figcaption></figure>
+          <figure class="programme-logo programme-wordmark"><div class="wordmark-symbol">CAS</div><figcaption>Compagnie Arts Sauveur</figcaption><div class="wordmark-name">Compagnie Arts Sauveur</div></figure>
+          <figure class="programme-logo programme-wordmark"><div class="wordmark-symbol">IFT</div><figcaption>Institut français du Togo</figcaption><div class="wordmark-name">Institut français du Togo</div></figure>
+          <figure class="programme-logo programme-wordmark"><div class="wordmark-symbol">CANAL+</div><figcaption>Canal+ — Comédie Club</figcaption><div class="wordmark-name">Canal+ — Comédie Club</div></figure>
+          <figure class="programme-logo programme-wordmark"><div class="wordmark-symbol">RIRL</div><figcaption>Rendez-vous international du rire de Lomé</figcaption><div class="wordmark-name">Rendez-vous international du rire de Lomé</div></figure>
+          <figure class="programme-logo programme-wordmark"><div class="wordmark-symbol">CUBE</div><figcaption>CUBE — D-CLIC</figcaption><div class="wordmark-name">CUBE — D-CLIC</div></figure>
+          <figure class="programme-logo programme-wordmark"><div class="wordmark-symbol">JACDA</div><figcaption>Jeune Acteur et Contributeur au Développement de l’Afrique</figcaption><div class="wordmark-name">Jeune Acteur et Contributeur au Développement de l’Afrique</div></figure>
+          <figure class="programme-logo programme-wordmark"><div class="wordmark-symbol">OIF</div><figcaption>Organisation internationale de la Francophonie</figcaption><div class="wordmark-name">Organisation internationale de la Francophonie</div></figure>
+          <figure class="programme-logo programme-wordmark"><div class="wordmark-symbol">CNA</div><figcaption>Cinéma numérique ambulant</figcaption><div class="wordmark-name">Cinéma numérique ambulant</div></figure>
+          <figure class="programme-logo programme-wordmark"><div class="wordmark-symbol">SIMEL’ARCT</div><figcaption>Simel’Arct</figcaption><div class="wordmark-name">Simel’Arct</div></figure>
+          <figure class="programme-logo programme-wordmark"><div class="wordmark-symbol">FORT</div><figcaption>Fort Institute</figcaption><div class="wordmark-name">Fort Institute</div></figure>
         </div>
         <div class="logo-marquee-group" aria-hidden="true">
-          <figure class="programme-logo"><img src="images/Screenshot_20261014-222729_Lite~2.jpg" alt="" loading="eager"></figure>
-          <figure class="programme-logo"><img src="images/Screenshot_20261014-223323_Lite~2.jpg" alt="" loading="eager"></figure>
+          <figure class="programme-logo programme-wordmark" aria-hidden="true"><div class="wordmark-symbol">CAS</div><figcaption>Compagnie Arts Sauveur</figcaption><div class="wordmark-name">Compagnie Arts Sauveur</div></figure>
+          <figure class="programme-logo programme-wordmark" aria-hidden="true"><div class="wordmark-symbol">IFT</div><figcaption>Institut français du Togo</figcaption><div class="wordmark-name">Institut français du Togo</div></figure>
+          <figure class="programme-logo programme-wordmark" aria-hidden="true"><div class="wordmark-symbol">CANAL+</div><figcaption>Canal+ — Comédie Club</figcaption><div class="wordmark-name">Canal+ — Comédie Club</div></figure>
+          <figure class="programme-logo programme-wordmark" aria-hidden="true"><div class="wordmark-symbol">RIRL</div><figcaption>Rendez-vous international du rire de Lomé</figcaption><div class="wordmark-name">Rendez-vous international du rire de Lomé</div></figure>
+          <figure class="programme-logo programme-wordmark" aria-hidden="true"><div class="wordmark-symbol">CUBE</div><figcaption>CUBE — D-CLIC</figcaption><div class="wordmark-name">CUBE — D-CLIC</div></figure>
+          <figure class="programme-logo programme-wordmark" aria-hidden="true"><div class="wordmark-symbol">JACDA</div><figcaption>Jeune Acteur et Contributeur au Développement de l’Afrique</figcaption><div class="wordmark-name">Jeune Acteur et Contributeur au Développement de l’Afrique</div></figure>
+          <figure class="programme-logo programme-wordmark" aria-hidden="true"><div class="wordmark-symbol">OIF</div><figcaption>Organisation internationale de la Francophonie</figcaption><div class="wordmark-name">Organisation internationale de la Francophonie</div></figure>
+          <figure class="programme-logo programme-wordmark" aria-hidden="true"><div class="wordmark-symbol">CNA</div><figcaption>Cinéma numérique ambulant</figcaption><div class="wordmark-name">Cinéma numérique ambulant</div></figure>
+          <figure class="programme-logo programme-wordmark" aria-hidden="true"><div class="wordmark-symbol">SIMEL’ARCT</div><figcaption>Simel’Arct</figcaption><div class="wordmark-name">Simel’Arct</div></figure>
+          <figure class="programme-logo programme-wordmark" aria-hidden="true"><div class="wordmark-symbol">FORT</div><figcaption>Fort Institute</figcaption><div class="wordmark-name">Fort Institute</div></figure>
         </div>
       </div>
     </div>
