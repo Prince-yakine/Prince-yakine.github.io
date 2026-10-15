@@ -36,12 +36,12 @@ section{padding:88px 0;border-bottom:1px solid rgba(255,255,255,.075)}
 .eyebrow:before{content:"";width:28px;height:2px;background:var(--gold)}
 h1{font-size:clamp(2.65rem,7.4vw,5.7rem);line-height:.99;letter-spacing:-.065em;font-weight:900;margin-bottom:24px}
 h1 span,.gold{color:var(--gold)}
-h1 .typing-line{display:block;position:relative;width:max-content;max-width:100%;overflow:hidden;white-space:nowrap;border-right:3px solid var(--gold);padding-right:.08em;text-shadow:0 0 18px rgba(248,185,35,.12);box-sizing:border-box}
-h1 .typing-first{color:var(--text);animation:typing-first 1.25s steps(12,end) .35s both,typing-caret .8s step-end .35s 4}
-h1 .typing-last{color:var(--gold);text-shadow:0 0 12px rgba(248,185,35,.35),0 0 30px rgba(248,185,35,.14);animation:typing-last 1.2s steps(11,end) 1.8s both,typing-caret .8s step-end 1.8s 4}
-@keyframes typing-first{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
-@keyframes typing-last{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
-@keyframes typing-caret{0%,100%{border-right-color:var(--gold);filter:drop-shadow(0 0 5px rgba(248,185,35,.8))}50%{border-right-color:transparent;filter:none}}
+h1 .typing-line{display:block;position:relative;width:max-content;max-width:100%;white-space:nowrap;padding-right:.04em;box-sizing:border-box}
+h1 .typing-first{color:var(--text)}
+h1 .typing-last{color:var(--gold);text-shadow:0 0 12px rgba(248,185,35,.35),0 0 30px rgba(248,185,35,.14)}
+h1 .drop-letter{display:inline-block;opacity:0;transform:translateY(-1.15em) rotateX(55deg) scale(.88);transform-origin:top center;filter:blur(3px);animation:letter-drop .42s cubic-bezier(.18,.8,.25,1) calc(var(--start) + var(--i)*.075s) forwards}
+h1 .typing-last .drop-letter{animation-duration:.46s}
+@keyframes letter-drop{0%{opacity:0;transform:translateY(-1.15em) rotateX(55deg) scale(.88);filter:blur(3px)}72%{opacity:1;transform:translateY(.08em) rotateX(-5deg) scale(1.03);filter:blur(0)}100%{opacity:1;transform:translateY(0) rotateX(0) scale(1);filter:blur(0)}
 .lead{font-size:clamp(1.05rem,2.3vw,1.28rem);font-weight:650;max-width:720px;margin-bottom:14px}
 .intro{color:var(--muted);max-width:680px;margin-bottom:30px}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
@@ -78,7 +78,7 @@ footer{padding:28px 0;color:var(--muted);font-size:.84rem}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
 @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:32px}.profile-card{max-width:360px;justify-self:center}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{min-height:auto;padding:76px 0 82px}}
 @media(max-width:680px){.container{width:min(var(--max),calc(100% - 32px))}.nav-wrap{min-height:66px}.menu-btn{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;padding:18px 20px 22px;background:#0e1016;border-bottom:1px solid var(--line);align-items:stretch;gap:0}nav.open{display:flex;flex-direction:column}nav a{padding:11px 0;border-bottom:1px solid #ffffff0b;font-size:.95rem}nav a:last-child{border-bottom:0}.ticker-group{gap:18px;padding-right:18px}.ticker-item{font-size:.7rem;letter-spacing:1.5px}.ticker-item:after{margin-left:18px}section{padding:66px 0}.hero{padding:66px 0 72px}.grid,.skills{grid-template-columns:1fr}.card{padding:21px}.cv-panel{grid-template-columns:1fr}.cv-panel .btn{justify-self:start}h1{font-size:clamp(2.25rem,11vw,3.65rem);letter-spacing:-.055em}h1 .typing-line{max-width:100%}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body,body:before{animation:none}.ticker-track{animation:none}h1 .typing-line{width:max-content;max-width:100%;border-right:0;clip-path:none;animation:none}.reveal{opacity:1;transform:none;transition:none}.card,.btn,.profile-card,.portrait-photo,.hero-grid>div:first-child{animation:none;transition:none;filter:none;opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body,body:before{animation:none}.ticker-track{animation:none}h1 .drop-letter{opacity:1;transform:none;filter:none;animation:none}.reveal{opacity:1;transform:none;transition:none}.card,.btn,.profile-card,.portrait-photo,.hero-grid>div:first-child{animation:none;transition:none;filter:none;opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -102,7 +102,7 @@ footer{padding:28px 0;color:var(--muted);font-size:.84rem}
     <div class="container hero-grid">
       <div>
         <div class="eyebrow">Créativité avec Impact</div>
-        <h1 aria-label="Rauch Yakine TCHONTCHOKO"><span class="typing-line typing-first">Rauch Yakine</span><span class="typing-line typing-last">TCHONTCHOKO</span></h1>
+        <h1 aria-label="Rauch Yakine TCHONTCHOKO"><span class="typing-line typing-last" aria-hidden="true" style="--start:0.25s"><span class="drop-letter" style="--i:0">R</span><span class="drop-letter" style="--i:1">a</span><span class="drop-letter" style="--i:2">u</span><span class="drop-letter" style="--i:3">c</span><span class="drop-letter" style="--i:4">h</span><span class="drop-letter" style="--i:5">&nbsp;</span><span class="drop-letter" style="--i:6">Y</span><span class="drop-letter" style="--i:7">a</span><span class="drop-letter" style="--i:8">k</span><span class="drop-letter" style="--i:9">i</span><span class="drop-letter" style="--i:10">n</span><span class="drop-letter" style="--i:11">e</span></span><span class="typing-line typing-last" aria-hidden="true" style="--start:1.25s"><span class="drop-letter" style="--i:0">T</span><span class="drop-letter" style="--i:1">C</span><span class="drop-letter" style="--i:2">H</span><span class="drop-letter" style="--i:3">O</span><span class="drop-letter" style="--i:4">N</span><span class="drop-letter" style="--i:5">T</span><span class="drop-letter" style="--i:6">C</span><span class="drop-letter" style="--i:7">H</span><span class="drop-letter" style="--i:8">O</span><span class="drop-letter" style="--i:9">K</span><span class="drop-letter" style="--i:10">O</span></span></h1>
         <p class="lead">Chargé de communication · Créateur de contenu · Scénariste · Humoriste · Gestion de projet · Athlète · Scout · Développeur web</p>
         <p class="intro">Je transforme les idées en histoires, les histoires en projets et les projets en solutions concrètes. À la croisée de la communication, de l’art, de l’audiovisuel et du numérique, je conçois des initiatives créatives à impact culturel et social.</p>
         <div class="actions"><a class="btn btn-primary" href="#projets">Découvrir mes projets ↗</a><a class="btn btn-secondary" href="#contact">Collaborons ensemble</a></div>
