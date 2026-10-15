@@ -111,7 +111,7 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;letter-spacing:-.045em;ma
 .logo-marquee:hover .logo-marquee-track{animation-play-state:paused}
 .logo-marquee-group{display:flex;align-items:center;gap:18px;padding-right:18px}
 .programme-logo{width:clamp(190px,23vw,260px);height:126px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;padding:13px 17px;border:1px solid rgba(255,255,255,.12);border-radius:15px;background:#f8f8f8;box-shadow:0 12px 26px rgba(0,0,0,.22);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;overflow:hidden}
-.programme-logo img{display:block;width:100%;height:100%;object-fit:contain}
+.programme-logo img{display:block;width:100%;height:100%;object-fit:contain}.programme-logo img[src$="logo_CNA.jpg"]{object-fit:contain}.programme-logo{position:relative}
 .programme-logo:hover{transform:perspective(700px) rotateY(-5deg) translateY(-4px) scale(1.035);border-color:var(--gold);box-shadow:0 16px 34px rgba(0,0,0,.32),0 0 18px rgba(248,185,35,.12)}
 .programme-logo figcaption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 @keyframes logo-marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -223,16 +223,16 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
     <div class="logo-marquee" role="region" aria-label="Défilement infini des programmes et organisations">
       <div class="logo-marquee-track">
         <div class="logo-marquee-group">
-          <figure class="programme-logo"><img src="logo_CNA.jpg" alt="Logo officiel du Cinéma numérique ambulant" loading="lazy" decoding="async"><figcaption>Cinéma numérique ambulant</figcaption></figure>
-          <figure class="programme-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Institut_francais_logo.svg/512px-Institut_francais_logo.svg.png" alt="Logo de l’Institut français" loading="lazy" decoding="async"><figcaption>Institut français du Togo</figcaption></figure>
-          <figure class="programme-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Canal%2B_logo.svg/512px-Canal%2B_logo.svg.png" alt="Logo Canal+" loading="lazy" decoding="async"><figcaption>Canal+</figcaption></figure>
-          <figure class="programme-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Organisation_internationale_de_la_Francophonie_logo.svg/512px-Organisation_internationale_de_la_Francophonie_logo.svg.png" alt="Logo de l’Organisation internationale de la Francophonie" loading="lazy" decoding="async"><figcaption>Organisation internationale de la Francophonie</figcaption></figure>
+          <figure class="programme-logo"><img src="logo_CNA.jpg" alt="Logo officiel du Cinéma numérique ambulant" loading="eager" decoding="async"><figcaption>Cinéma numérique ambulant</figcaption></figure>
+          <figure class="programme-logo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Institut%20Fran%C3%A7ais.svg" alt="Logo de l’Institut français" loading="lazy" decoding="async"><figcaption>Institut français du Togo</figcaption></figure>
+          <figure class="programme-logo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/CanalPlus.svg" alt="Logo Canal+" loading="lazy" decoding="async"><figcaption>Canal+</figcaption></figure>
+          <figure class="programme-logo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_OIF.svg" alt="Logo de l’Organisation internationale de la Francophonie" loading="lazy" decoding="async"><figcaption>Organisation internationale de la Francophonie</figcaption></figure>
         </div>
         <div class="logo-marquee-group" aria-hidden="true">
           <figure class="programme-logo" aria-hidden="true"><img src="logo_CNA.jpg" alt="Logo officiel du Cinéma numérique ambulant" loading="lazy" decoding="async"><figcaption>Cinéma numérique ambulant</figcaption></figure>
-          <figure class="programme-logo" aria-hidden="true"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Institut_francais_logo.svg/512px-Institut_francais_logo.svg.png" alt="Logo de l’Institut français" loading="lazy" decoding="async"><figcaption>Institut français du Togo</figcaption></figure>
-          <figure class="programme-logo" aria-hidden="true"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Canal%2B_logo.svg/512px-Canal%2B_logo.svg.png" alt="Logo Canal+" loading="lazy" decoding="async"><figcaption>Canal+</figcaption></figure>
-          <figure class="programme-logo" aria-hidden="true"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Organisation_internationale_de_la_Francophonie_logo.svg/512px-Organisation_internationale_de_la_Francophonie_logo.svg.png" alt="Logo de l’Organisation internationale de la Francophonie" loading="lazy" decoding="async"><figcaption>Organisation internationale de la Francophonie</figcaption></figure>
+          <figure class="programme-logo" aria-hidden="true"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Institut%20Fran%C3%A7ais.svg" alt="Logo de l’Institut français" loading="lazy" decoding="async"><figcaption>Institut français du Togo</figcaption></figure>
+          <figure class="programme-logo" aria-hidden="true"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/CanalPlus.svg" alt="Logo Canal+" loading="lazy" decoding="async"><figcaption>Canal+</figcaption></figure>
+          <figure class="programme-logo" aria-hidden="true"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_OIF.svg" alt="Logo de l’Organisation internationale de la Francophonie" loading="lazy" decoding="async"><figcaption>Organisation internationale de la Francophonie</figcaption></figure>
         </div>
       </div>
     </div>
