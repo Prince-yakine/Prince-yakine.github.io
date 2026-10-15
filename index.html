@@ -99,6 +99,25 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;letter-spacing:-.045em;ma
 .social-card>span:nth-child(2){overflow-wrap:anywhere}
 .social-arrow{margin-left:auto;color:var(--gold);font-size:.95rem}
 @keyframes social-card-arrive{0%{opacity:0;transform:perspective(700px) rotateX(-35deg) translateY(-28px) translateZ(-45px) scale(.88)}65%{opacity:1;transform:perspective(700px) rotateX(7deg) translateY(3px) translateZ(8px) scale(1.02)}100%{opacity:1;transform:perspective(700px) rotateX(0) translateY(0) translateZ(0) scale(1)}}
+
+/* Chenillard infini des programmes et organisations */
+.programmes-section{padding:58px 0 64px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.018),transparent)}
+.programmes-heading{text-align:center;margin-bottom:28px}
+.programmes-heading .section-kicker{margin-bottom:8px}
+.programmes-heading h2{font-size:clamp(1.55rem,3.5vw,2.25rem);margin-bottom:10px}
+.programmes-heading p{color:var(--muted);font-size:.92rem}
+.logo-marquee{position:relative;overflow:hidden;width:100%;padding:12px 0;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.logo-marquee-track{display:flex;align-items:center;gap:18px;width:max-content;animation:logo-marquee-scroll 38s linear infinite;will-change:transform}
+.logo-marquee:hover .logo-marquee-track{animation-play-state:paused}
+.logo-marquee-group{display:flex;align-items:center;gap:18px;padding-right:18px}
+.programme-logo{width:clamp(190px,23vw,260px);height:126px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;padding:13px 17px;border:1px solid rgba(255,255,255,.12);border-radius:15px;background:#f8f8f8;box-shadow:0 12px 26px rgba(0,0,0,.22);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;overflow:hidden}
+.programme-logo img{display:block;width:100%;height:100%;object-fit:contain}
+.programme-logo:hover{transform:perspective(700px) rotateY(-5deg) translateY(-4px) scale(1.035);border-color:var(--gold);box-shadow:0 16px 34px rgba(0,0,0,.32),0 0 18px rgba(248,185,35,.12)}
+.programme-logo figcaption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+@keyframes logo-marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:600px){.programmes-section{padding:42px 0}.programme-logo{width:178px;height:105px;padding:10px 13px}.logo-marquee-track,.logo-marquee-group{gap:12px}.logo-marquee-group{padding-right:12px}}
+@media(prefers-reduced-motion:reduce){.logo-marquee-track{animation:none}.programme-logo{transition:none}}
+
 footer{padding:28px 0;color:var(--muted);font-size:.84rem}
 .footer-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 #to-top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;display:grid;place-items:center;background:var(--gold);color:#111;border-radius:50%;text-decoration:none;font-size:1.3rem;font-weight:900;box-shadow:0 8px 30px #0005;opacity:0;pointer-events:none;transform:translateY(8px);transition:.2s;z-index:20}
@@ -192,6 +211,41 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
         <div class="skill-group"><h3>Création &amp; audiovisuel</h3><div class="skill-tags"><span>Écriture de scénarios</span><span>Humour &amp; scène</span><span>Jeu d’acteur</span><span>Photographie</span><span>Production de contenu</span><span>Direction artistique</span></div></div>
         <div class="skill-group"><h3>Technologies numériques</h3><div class="skill-tags"><span>HTML &amp; CSS</span><span>Développement web/mobile</span><span>UI/UX design</span><span>Support informatique</span><span>Culture cybersécurité</span><span>Découverte de l’IA</span></div></div>
         <div class="skill-group"><h3>Recherche &amp; leadership</h3><div class="skill-tags"><span>Sciences du langage</span><span>Collecte de données</span><span>Animation communautaire</span><span>Prise de parole</span><span>Travail collaboratif</span><span>Engagement citoyen</span></div></div>
+      </div>
+    </div>
+  </section>
+  <section id="programmes" class="programmes-section" aria-label="Programmes et organisations auxquels j’ai participé">
+    <div class="container programmes-heading">
+      <p class="section-kicker">Engagements &amp; collaborations</p>
+      <h2>Programmes qui ont marqué <span class="gold">mon parcours</span></h2>
+      <p>Quelques organisations et initiatives auxquelles j’ai participé.</p>
+    </div>
+    <div class="logo-marquee" role="region" aria-label="Défilement infini des logos des programmes">
+      <div class="logo-marquee-track">
+        <div class="logo-marquee-group">
+          <figure class="programme-logo"><img src="images/compagnie-arts-sauveur.jpg" alt="Compagnie Arts Sauveur" loading="lazy"><figcaption>Compagnie Arts Sauveur</figcaption></figure>
+          <figure class="programme-logo"><img src="images/institut-francais-togo.jpg" alt="Institut français du Togo" loading="lazy"><figcaption>Institut français du Togo</figcaption></figure>
+          <figure class="programme-logo"><img src="images/canal-plus.jpg" alt="CANAL+" loading="lazy"><figcaption>CANAL+</figcaption></figure>
+          <figure class="programme-logo"><img src="images/rendez-vous-international-rire-lome.jpg" alt="Rendez-vous international du rire à Lomé" loading="lazy"><figcaption>Rendez-vous international du rire à Lomé</figcaption></figure>
+          <figure class="programme-logo"><img src="images/cube.jpg" alt="CUBE — Centre urbain de business et d’entrepreneuriat" loading="lazy"><figcaption>CUBE</figcaption></figure>
+          <figure class="programme-logo"><img src="images/jacda.jpg" alt="JACDA — Jeunes Acteurs et Contributeurs au Développement de l’Afrique" loading="lazy"><figcaption>JACDA</figcaption></figure>
+          <figure class="programme-logo"><img src="images/oif-dclic.jpg" alt="Organisation internationale de la Francophonie — D-CLIC" loading="lazy"><figcaption>OIF — D-CLIC</figcaption></figure>
+          <figure class="programme-logo"><img src="images/cinema-numerique-ambulant.jpg" alt="Cinéma numérique ambulant" loading="lazy"><figcaption>Cinéma numérique ambulant</figcaption></figure>
+          <figure class="programme-logo"><img src="images/simel-arct.jpg" alt="SIMEL’ARCT" loading="lazy"><figcaption>SIMEL’ARCT</figcaption></figure>
+          <figure class="programme-logo"><img src="images/fort-institute.jpg" alt="Fort Institute" loading="lazy"><figcaption>Fort Institute</figcaption></figure>
+        </div>
+        <div class="logo-marquee-group" aria-hidden="true">
+          <figure class="programme-logo"><img src="images/compagnie-arts-sauveur.jpg" alt="" loading="lazy"></figure>
+          <figure class="programme-logo"><img src="images/institut-francais-togo.jpg" alt="" loading="lazy"></figure>
+          <figure class="programme-logo"><img src="images/canal-plus.jpg" alt="" loading="lazy"></figure>
+          <figure class="programme-logo"><img src="images/rendez-vous-international-rire-lome.jpg" alt="" loading="lazy"></figure>
+          <figure class="programme-logo"><img src="images/cube.jpg" alt="" loading="lazy"></figure>
+          <figure class="programme-logo"><img src="images/jacda.jpg" alt="" loading="lazy"></figure>
+          <figure class="programme-logo"><img src="images/oif-dclic.jpg" alt="" loading="lazy"></figure>
+          <figure class="programme-logo"><img src="images/cinema-numerique-ambulant.jpg" alt="" loading="lazy"></figure>
+          <figure class="programme-logo"><img src="images/simel-arct.jpg" alt="" loading="lazy"></figure>
+          <figure class="programme-logo"><img src="images/fort-institute.jpg" alt="" loading="lazy"></figure>
+        </div>
       </div>
     </div>
   </section>
