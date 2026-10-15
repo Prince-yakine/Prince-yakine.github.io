@@ -30,6 +30,17 @@ nav{display:flex;align-items:center;gap:clamp(12px,2vw,26px)}nav a{text-decorati
 .ticker:hover .ticker-track{animation-play-state:paused}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 section{padding:88px 0;border-bottom:1px solid rgba(255,255,255,.075)}
+.stats-band{position:relative;overflow:hidden;padding:26px 0;background:linear-gradient(110deg,#180609 0%,#33070d 48%,#190509 100%);border-top:1px solid rgba(255,35,55,.75);border-bottom:1px solid rgba(255,35,55,.75);box-shadow:0 0 24px rgba(255,0,40,.15),inset 0 0 34px rgba(255,0,40,.08)}
+.stats-band:before,.stats-band:after{content:"";position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#ff263f 18%,#fff 50%,#ff263f 82%,transparent);box-shadow:0 0 12px #ff1c36;animation:stats-glow 3.2s ease-in-out infinite alternate}
+.stats-band:before{top:0}.stats-band:after{bottom:0}
+@keyframes stats-glow{from{opacity:.55;transform:scaleX(.78)}to{opacity:1;transform:scaleX(1)}}
+.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center}
+.stat-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px 16px;text-align:center;min-width:0}
+.stat-item+.stat-item{border-left:1px solid rgba(255,40,58,.8)}
+.stat-number{font-size:clamp(2rem,4vw,3.1rem);font-weight:950;font-style:italic;line-height:1.1;letter-spacing:-.05em;color:#ff263f;text-shadow:0 0 12px rgba(255,20,45,.45);font-variant-numeric:tabular-nums}
+.stat-item span{font-size:clamp(.65rem,1.1vw,.9rem);font-weight:850;font-style:italic;text-transform:uppercase;line-height:1.35;color:#f8f8fa;text-shadow:0 0 10px rgba(255,255,255,.18)}
+.stats-band .stat-number{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.stats-band.visible .stat-number{opacity:1;transform:translateY(0)}
 .hero{min-height:min(760px,82vh);display:flex;align-items:center;padding:90px 0 100px;border-bottom:1px solid rgba(255,255,255,.075)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(230px,.65fr);gap:52px;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--gold);font-size:.76rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:22px}
@@ -76,7 +87,7 @@ footer{padding:28px 0;color:var(--muted);font-size:.84rem}
 #to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
 @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:32px}.profile-card{max-width:360px;justify-self:center}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{min-height:auto;padding:76px 0 82px}}
-@media(max-width:680px){.container{width:min(var(--max),calc(100% - 32px))}.nav-wrap{min-height:66px}.menu-btn{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;padding:18px 20px 22px;background:#0e1016;border-bottom:1px solid var(--line);align-items:stretch;gap:0}nav.open{display:flex;flex-direction:column}nav a{padding:11px 0;border-bottom:1px solid #ffffff0b;font-size:.95rem}nav a:last-child{border-bottom:0}.ticker-group{gap:18px;padding-right:18px}.ticker-item{font-size:.7rem;letter-spacing:1.5px}.ticker-item:after{margin-left:18px}section{padding:66px 0}.hero{padding:66px 0 72px}.grid,.skills{grid-template-columns:1fr}.card{padding:21px}.cv-panel{grid-template-columns:1fr}.cv-panel .btn{justify-self:start}h1{font-size:clamp(2.25rem,11vw,3.65rem);letter-spacing:-.055em}}
+@media(max-width:680px){.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}.stat-item{padding:10px 8px}.stat-item:nth-child(3){border-left:0}.stat-item:nth-child(n+3){border-top:1px solid rgba(255,40,58,.5);padding-top:18px}.stats-band{padding:22px 0}.container{width:min(var(--max),calc(100% - 32px))}.nav-wrap{min-height:66px}.menu-btn{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;padding:18px 20px 22px;background:#0e1016;border-bottom:1px solid var(--line);align-items:stretch;gap:0}nav.open{display:flex;flex-direction:column}nav a{padding:11px 0;border-bottom:1px solid #ffffff0b;font-size:.95rem}nav a:last-child{border-bottom:0}.ticker-group{gap:18px;padding-right:18px}.ticker-item{font-size:.7rem;letter-spacing:1.5px}.ticker-item:after{margin-left:18px}section{padding:66px 0}.hero{padding:66px 0 72px}.grid,.skills{grid-template-columns:1fr}.card{padding:21px}.cv-panel{grid-template-columns:1fr}.cv-panel .btn{justify-self:start}h1{font-size:clamp(2.25rem,11vw,3.65rem);letter-spacing:-.055em}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body,body:before{animation:none}.ticker-track{animation:none}h1 .name-letter{animation:none;opacity:1;transform:none;filter:none}.reveal{opacity:1;transform:none;transition:none}.card,.btn,.profile-card,.portrait-photo,.hero-grid>div:first-child{animation:none;transition:none;filter:none;opacity:1;transform:none}}
 </style>
 </head>
@@ -109,6 +120,14 @@ footer{padding:28px 0;color:var(--muted);font-size:.84rem}
       <aside class="profile-card" aria-label="Photo de Rauch Yakine TCHONTCHOKO">
         <div class="portrait-frame"><img class="portrait-photo" src="portrait.webp" alt="Photo de Rauch Yakine TCHONTCHOKO" fetchpriority="high"></div>
       </aside>
+    </div>
+  </section>
+  <section class="stats-band" aria-label="Quelques chiffres clés">
+    <div class="container stats-grid">
+      <div class="stat-item"><strong class="stat-number" data-target="5">+0</strong><span>Années d’expériences</span></div>
+      <div class="stat-item"><strong class="stat-number" data-target="10">+0</strong><span>Certificats internationaux</span></div>
+      <div class="stat-item"><strong class="stat-number" data-target="10">+0</strong><span>Projets</span></div>
+      <div class="stat-item"><strong class="stat-number" data-target="5">+0</strong><span>Organisations internationales</span></div>
     </div>
   </section>
   <section id="apropos" class="reveal">
@@ -213,6 +232,37 @@ if ("IntersectionObserver" in window && !reducedMotion) {
   document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 } else {
   document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+}
+const statBand = document.querySelector(".stats-band");
+const statNumbers = document.querySelectorAll(".stat-number");
+function animateStatNumber(el) {
+  const target = Number(el.dataset.target || 0);
+  const duration = 1450;
+  const start = performance.now();
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 4);
+    el.textContent = "+" + Math.round(target * eased);
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+if (statBand && statNumbers.length) {
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    statBand.classList.add("visible");
+    statNumbers.forEach(el => { el.textContent = "+" + el.dataset.target; });
+  } else {
+    const statsObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          statBand.classList.add("visible");
+          statNumbers.forEach(animateStatNumber);
+          statsObserver.disconnect();
+        }
+      });
+    }, {threshold: 0.25});
+    statsObserver.observe(statBand);
+  }
 }
 const toTop = document.getElementById("to-top");
 window.addEventListener("scroll", () => {
