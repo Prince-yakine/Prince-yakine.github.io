@@ -48,7 +48,7 @@ section{padding:88px 0;border-bottom:1px solid rgba(255,255,255,.075)}
 h1{font-size:clamp(2.65rem,7.4vw,5.7rem);line-height:.99;letter-spacing:-.065em;font-weight:900;margin-bottom:24px}
 h1 span,.gold{color:var(--gold)}
 h1 .name-line{display:block;white-space:nowrap;max-width:100%}
-h1 .name-line.first{color:#fff}
+h1 .name-line.first,h1 .name-line.first .name-letter{color:#fff!important}
 h1 .name-line.last{color:var(--gold);text-shadow:0 0 12px rgba(248,185,35,.25)}
 h1 .name-letter{display:inline-block;opacity:0;transform:translateY(-.9em) rotateX(35deg);transform-origin:top center;filter:blur(2px);animation:name-letter-drop .42s cubic-bezier(.18,.8,.25,1) calc(var(--line-delay) + var(--i)*.075s) forwards}
 @keyframes name-letter-drop{0%{opacity:0;transform:translateY(-.9em) rotateX(35deg);filter:blur(2px)}72%{opacity:1;transform:translateY(.07em) rotateX(-4deg);filter:blur(0)}100%{opacity:1;transform:translateY(0) rotateX(0);filter:blur(0)}}
