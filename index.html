@@ -106,6 +106,30 @@ footer{padding:28px 0;color:var(--muted);font-size:.84rem}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
 @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:32px}.profile-card{max-width:360px;justify-self:center}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{min-height:auto;padding:76px 0 82px}}
 @media(max-width:850px){.social-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:680px){.social-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.social-card{padding:12px 10px;font-size:.82rem}.social-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}.stat-item{padding:10px 8px}.stat-item:nth-child(3){border-left:0}.stat-item:nth-child(n+3){border-top:1px solid rgba(255,40,58,.5);padding-top:18px}.stats-band{padding:22px 0}.container{width:min(var(--max),calc(100% - 32px))}.nav-wrap{min-height:66px}.menu-btn{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;padding:18px 20px 22px;background:#0e1016;border-bottom:1px solid var(--line);align-items:stretch;gap:0}nav.open{display:flex;flex-direction:column}nav a{padding:11px 0;border-bottom:1px solid #ffffff0b;font-size:.95rem}nav a:last-child{border-bottom:0}.ticker-group{gap:18px;padding-right:18px}.ticker-item{font-size:.7rem;letter-spacing:1.5px}.ticker-item:after{margin-left:18px}section{padding:66px 0}.hero{padding:66px 0 72px}.grid,.skills{grid-template-columns:1fr}.card{padding:21px}.cv-panel{grid-template-columns:1fr}.cv-panel .btn{justify-self:start}h1{font-size:clamp(2.25rem,11vw,3.65rem);letter-spacing:-.055em}}
+
+/* Effet profondeur 3D piloté par le défilement */
+html{scroll-behavior:smooth}
+main>section:not(.hero)>.container,.hero-grid,.stats-grid{
+  transform:perspective(1400px) translate3d(0,var(--scroll-y,0px),var(--scroll-z,0px)) scale(var(--scroll-scale,1));
+  transform-origin:center center;
+  transform-style:preserve-3d;
+  will-change:transform;
+}
+main>section:not(.hero) .section-kicker,
+main>section:not(.hero) h2{
+  transform:translate3d(0,var(--layer-y,0px),0);
+  transform-style:preserve-3d;
+}
+main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
+.ticker{position:relative;z-index:2;transform:translateZ(18px)}
+.stats-band{transform-style:preserve-3d}
+@media(prefers-reduced-motion:reduce){
+  main>section:not(.hero)>.container,.hero-grid,.stats-grid,
+  main>section:not(.hero) .section-kicker,main>section:not(.hero) h2{
+    transform:none!important;will-change:auto
+  }
+}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body,body:before{animation:none}.ticker-track{animation:none}.social-card{opacity:1;transform:none;animation:none!important}h1 .name-letter{animation:none;opacity:1;transform:none;filter:none}.reveal{opacity:1;transform:none;transition:none}.card,.btn,.profile-card,.portrait-photo,.hero-grid>div:first-child{animation:none;transition:none;filter:none;opacity:1;transform:none}}
 </style>
 </head>
@@ -289,6 +313,47 @@ if (statBand && statNumbers.length) {
     statsObserver.observe(statBand);
   }
 }
+
+// Moteur léger de perspective, scale-on-scroll et parallaxe multicouche.
+if (!reducedMotion) {
+  const depthLayers = Array.from(document.querySelectorAll(
+    ".hero-grid, .stats-grid, main>section:not(.hero)>.container"
+  ));
+  const parallaxLayers = Array.from(document.querySelectorAll(
+    "main>section:not(.hero) .section-kicker, main>section:not(.hero) h2"
+  ));
+  let depthFrame = 0;
+  const updateScrollDepth = () => {
+    depthFrame = 0;
+    const vh = window.innerHeight || 1;
+    depthLayers.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom < -100 || rect.top > vh + 100) return;
+      const center = rect.top + rect.height / 2;
+      const distance = (center - vh * 0.5) / (vh * 0.8);
+      const depth = Math.max(-1, Math.min(1, distance));
+      const scale = 1 - Math.min(0.045, Math.abs(depth) * 0.045);
+      el.style.setProperty("--scroll-scale", scale.toFixed(4));
+      el.style.setProperty("--scroll-z", (-Math.abs(depth) * 58).toFixed(1) + "px");
+      el.style.setProperty("--scroll-y", (depth * -10).toFixed(1) + "px");
+    });
+    parallaxLayers.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom < -80 || rect.top > vh + 80) return;
+      const center = rect.top + rect.height / 2;
+      const distance = (center - vh * 0.5) / (vh * 0.65);
+      const offset = Math.max(-1, Math.min(1, distance)) * -13;
+      el.style.setProperty("--layer-y", offset.toFixed(1) + "px");
+    });
+  };
+  const requestDepthUpdate = () => {
+    if (!depthFrame) depthFrame = requestAnimationFrame(updateScrollDepth);
+  };
+  window.addEventListener("scroll", requestDepthUpdate, {passive:true});
+  window.addEventListener("resize", requestDepthUpdate, {passive:true});
+  updateScrollDepth();
+}
+
 const toTop = document.getElementById("to-top");
 window.addEventListener("scroll", () => {
   toTop.classList.toggle("show", window.scrollY > 450);
