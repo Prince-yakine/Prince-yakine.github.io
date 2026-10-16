@@ -255,6 +255,8 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
 @keyframes portrait-cinematic-sweep{0%,15%{transform:translateX(-100%) rotate(8deg);opacity:0}30%{opacity:1}65%,100%{transform:translateX(100%) rotate(8deg);opacity:0}}
 @keyframes portrait-cinematic-zoom{0%,100%{transform:scale(1)}50%{transform:scale(1.065)}}
 @media(prefers-reduced-motion:reduce){.about-full .about-photo .portrait-frame,.about-full .about-photo .portrait-photo,.about-full .about-photo .portrait-frame:before{animation:none}}
+
+.language-switch{display:flex;gap:5px;align-items:center;margin-left:auto}.language-switch a{display:inline-flex;align-items:center;justify-content:center;min-width:38px;padding:7px 10px;border:1px solid var(--line);border-radius:9px;text-decoration:none;font-size:.78rem;font-weight:900;color:var(--muted)}.language-switch a[aria-current="page"]{background:var(--gold);border-color:var(--gold);color:#17130a}@media(max-width:850px){.nav-wrap{flex-wrap:wrap}.language-switch{margin-left:auto}nav{order:3;width:100%}}
 </style>
 <style>
 /* Compétences techniques : grille d'icônes de marques */
@@ -382,6 +384,7 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
   <div class="container nav-wrap">
     <a class="logo" href="#accueil" aria-label="Retour à l'accueil"><img class="logo-photo" src="portrait.webp" alt="" width="34" height="34"><span>.</span></a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">☰ Menu</button>
+    <div class="language-switch" aria-label="Language"><a href="index.html" lang="fr" aria-current="page">FR</a><a href="index-en.html" lang="en">EN</a></div>
     <nav id="mainNav" aria-label="Navigation principale">
       <a href="#apropos">À propos</a><a href="#prestations">Prestations</a><a href="#competences">Compétences</a><a href="#parcours">Parcours</a><a href="#projets">Projets</a><a href="#cv">CV</a><a href="#contact">Contact</a>
     </nav>
