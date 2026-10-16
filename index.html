@@ -630,24 +630,7 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
     </div>
   </section>
 </main>
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-main">
-      <a class="footer-brand" href="#accueil" aria-label="Retour en haut de page">
-        <span class="footer-monogram">RY</span>
-        <span class="footer-brand-copy"><strong>Rauch Yakine</strong><small>TCHONTCHOKO · Portfolio professionnel</small></span>
-      </a>
-      <p class="footer-manifesto">Des idées aux projets.<br><span>De la créativité à l’impact.</span></p>
-      <a class="footer-cta" href="#contact">Un projet en tête ? <span aria-hidden="true">↗</span></a>
-    </div>
-    <div class="footer-divider"></div>
-    <div class="footer-bottom">
-      <span>© <span id="year"></span> Rauch Yakine TCHONTCHOKO. Tous droits réservés.</span>
-      <nav class="footer-links" aria-label="Liens de pied de page"><a href="#apropos">À propos</a><a href="#projets">Projets</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a></nav>
-      <a class="footer-top-link" href="#accueil">Retour en haut ↑</a>
-    </div>
-  </div>
-</footer>
+<footer><div class="container footer-row"><span>© <span id="year"></span> Rauch Yakine TCHONTCHOKO. Tous droits réservés.</span><span>Conçu avec intention, créativité et ambition.</span></div></footer>
 <a id="to-top" href="#accueil" aria-label="Retour en haut">↑</a>
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -808,21 +791,4 @@ document.getElementById("printCv").addEventListener("click", () => window.print(
 
 <script async src="https://www.tiktok.com/embed.js"></script>
 </body>
-</html>\n<style>
-/* Footer premium : identité, navigation et appel à l'action */
-.site-footer{position:relative;isolation:isolate;overflow:hidden;padding:44px 0 22px;color:#e9e9ef;background:radial-gradient(ellipse at 12% 0%,rgba(212,175,55,.13),transparent 42%),linear-gradient(180deg,#11131b 0%,#090a0f 100%);border-top:1px solid rgba(212,175,55,.28)}
-.site-footer:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(110deg,transparent 0%,rgba(255,255,255,.018) 50%,transparent 100%)}
-.footer-main{display:grid;grid-template-columns:1.1fr 1fr auto;align-items:center;gap:28px;padding:8px 0 30px}
-.footer-brand{display:flex;align-items:center;gap:13px;color:#fff;text-decoration:none;min-width:0}
-.footer-monogram{display:grid;place-items:center;width:54px;height:54px;flex:0 0 54px;border:1px solid rgba(230,195,92,.75);border-radius:16px;color:#f2d47d;font-size:1.05rem;font-weight:900;letter-spacing:-1px;background:linear-gradient(145deg,rgba(230,195,92,.16),rgba(230,195,92,.025));box-shadow:0 8px 28px rgba(0,0,0,.24),inset 0 0 18px rgba(230,195,92,.06)}
-.footer-brand-copy{display:flex;flex-direction:column;gap:5px}.footer-brand-copy strong{font-size:1.05rem;letter-spacing:.01em}.footer-brand-copy small{color:#a8aab7;font-size:.76rem}
-.footer-manifesto{margin:0;color:#fff;font-weight:750;font-size:clamp(1rem,2.3vw,1.35rem);line-height:1.55}.footer-manifesto span{color:#e5c568}
-.footer-cta{display:inline-flex;align-items:center;justify-content:center;gap:16px;padding:13px 17px;border:1px solid rgba(230,195,92,.45);border-radius:12px;color:#f4d780;text-decoration:none;font-size:.88rem;font-weight:750;background:rgba(230,195,92,.07);transition:transform .2s ease,border-color .2s ease,background .2s ease;white-space:nowrap}
-.footer-cta span{font-size:1.1rem}.footer-cta:hover{transform:translateY(-2px);border-color:#f4d780;background:rgba(230,195,92,.13)}
-.footer-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(230,195,92,.32),rgba(255,255,255,.08),transparent)}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:20px;color:#999cab;font-size:.78rem}
-.footer-links{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}.footer-links a,.footer-top-link{color:#c5c6d0;text-decoration:none;transition:color .2s}.footer-links a:hover,.footer-top-link:hover{color:#f4d780}.footer-top-link{white-space:nowrap}
-@media(max-width:760px){.site-footer{padding:34px 0 20px}.footer-main{grid-template-columns:1fr auto;gap:22px 12px;padding-bottom:24px}.footer-manifesto{grid-column:1/-1;grid-row:2;font-size:1.15rem}.footer-cta{grid-column:2;grid-row:1;padding:11px 12px;font-size:.8rem}.footer-bottom{align-items:flex-start;flex-direction:column;gap:14px}.footer-links{justify-content:flex-start;gap:16px}.footer-top-link{align-self:flex-end}}
-@media(max-width:390px){.footer-main{grid-template-columns:1fr}.footer-cta{grid-column:1;grid-row:3;justify-self:start}.footer-manifesto{grid-row:2}.footer-brand-copy small{font-size:.7rem}}
-@media(prefers-reduced-motion:reduce){.footer-cta,.footer-links a,.footer-top-link{transition:none}}
-</style>
+</html>\n
