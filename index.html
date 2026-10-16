@@ -270,6 +270,26 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
 </style>
 <style>
 /* Alignement et libellés des compétences */
+/* Carrousel interactif des compétences non techniques */
+#competences .skills-carousel{grid-column:1/-1;display:grid;grid-auto-columns:minmax(260px,1fr);grid-auto-flow:column;gap:15px;overflow-x:auto;padding:5px 3px 18px;scroll-snap-type:x proximity;overscroll-behavior-x:contain;scrollbar-color:var(--gold) var(--panel);scrollbar-width:thin}
+#competences .skill-carousel-card{min-width:0;align-self:start;scroll-snap-align:start;border:1px solid var(--line);border-radius:20px;background:linear-gradient(150deg,var(--panel2),var(--panel));overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s}
+#competences .skill-carousel-card:hover,#competences .skill-carousel-card[open]{border-color:rgba(248,185,35,.75);box-shadow:0 12px 28px rgba(0,0,0,.2)}
+#competences .skill-carousel-card summary{list-style:none;cursor:pointer;min-height:230px;padding:23px;display:flex;flex-direction:column;align-items:flex-start}
+#competences .skill-carousel-card summary::-webkit-details-marker{display:none}
+#competences .carousel-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:rgba(248,185,35,.12);color:var(--gold);font-size:1.55rem;margin-bottom:18px}
+#competences .skill-carousel-card summary h3{font-size:1.08rem;line-height:1.35;margin-bottom:10px}
+#competences .skill-carousel-card summary p{font-size:.9rem;color:var(--muted);margin-bottom:20px}
+#competences .carousel-action{margin-top:auto;width:100%;display:flex;justify-content:space-between;align-items:center;padding-top:13px;border-top:1px solid var(--line);color:var(--gold);font-size:.82rem;font-weight:800}
+#competences .carousel-action b{font-size:1.2rem;transition:transform .2s}
+#competences .skill-carousel-card[open] .carousel-action b{transform:rotate(45deg)}
+#competences .skill-carousel-details{padding:0 22px 23px;border-top:1px solid rgba(248,185,35,.2)}
+#competences .skill-carousel-details h4{font-size:.9rem;color:#e7e9ee;margin:18px 0 10px}
+#competences .skill-carousel-details .skill-tags{gap:8px}
+#competences .skill-carousel-details .skill-tags span{font-size:.8rem}
+#competences .skill-carousel-card summary:focus-visible{outline:2px solid var(--gold);outline-offset:-4px;border-radius:18px}
+@media(max-width:600px){#competences .skills-carousel{grid-auto-columns:minmax(82%,1fr);gap:12px}#competences .skill-carousel-card summary{min-height:215px;padding:19px}#competences .skill-carousel-details{padding:0 18px 20px}}
+@media(prefers-reduced-motion:reduce){#competences .skill-carousel-card{transition:none}}
+
 #competences .skill-group h3{font-size:1.12rem;line-height:1.35}
 #competences .skill-group h4{margin-top:22px}
 #competences .tech-icon-grid{grid-template-columns:repeat(auto-fill,minmax(76px,1fr));}
@@ -416,16 +436,24 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
             <span class="tech-icon" title="Marketing numérique" aria-label="Marketing numérique"><span class="tech-emoji">MKT</span></span>
           </div>
         </div>
-        <div class="skill-group"><h3>Compétences créatives &amp; artistiques</h3>
-          <h4>Écriture &amp; scène</h4><div class="skill-tags"><span>Écriture de scénarios</span><span>Scénarisation (certificat)</span><span>Dramaturgie</span><span>Écriture de sketchs</span><span>Stand-up</span><span>Théâtre</span><span>Jeu d’acteur</span><span>Animation radio et plateaux</span><span>Prise de parole en public</span><span>Performance artistique</span></div>
-          <h4>Production visuelle &amp; événementielle</h4><div class="skill-tags"><span>Photographie numérique</span><span>Cadrage</span><span>Réalisation audiovisuelle</span><span>Création audiovisuelle</span><span>Direction artistique</span><span>Régie d’événements</span><span>Décoration de salles</span><span>Scénographie d’exposition</span></div>
+        <div class="skills-carousel" aria-label="Carrousel des autres compétences">
+          <details class="skill-carousel-card">
+            <summary><span class="carousel-icon" aria-hidden="true">✍</span><h3>Compétences créatives &amp; artistiques</h3><p>Écriture, scène, photographie, cinéma et production événementielle.</p><span class="carousel-action">Cliquer pour découvrir <b aria-hidden="true">＋</b></span></summary>
+            <div class="skill-carousel-details"><h4>Écriture &amp; scène</h4><div class="skill-tags"><span>Écriture de scénarios</span><span>Scénarisation (certificat)</span><span>Dramaturgie</span><span>Écriture de sketchs</span><span>Stand-up</span><span>Théâtre</span><span>Jeu d’acteur</span><span>Animation radio et plateaux</span><span>Prise de parole en public</span><span>Performance artistique</span></div><h4>Production visuelle &amp; événementielle</h4><div class="skill-tags"><span>Photographie numérique</span><span>Cadrage</span><span>Réalisation audiovisuelle</span><span>Création audiovisuelle</span><span>Direction artistique</span><span>Régie d’événements</span><span>Décoration de salles</span><span>Scénographie d’exposition</span></div></div>
+          </details>
+          <details class="skill-carousel-card">
+            <summary><span class="carousel-icon" aria-hidden="true">◈</span><h3>Management, stratégie &amp; entrepreneuriat</h3><p>Gestion de projets, leadership, communication et marketing.</p><span class="carousel-action">Cliquer pour découvrir <b aria-hidden="true">＋</b></span></summary>
+            <div class="skill-carousel-details"><h4>Gestion &amp; leadership</h4><div class="skill-tags"><span>Notions de gestion de projet</span><span>Pilotage de projets entrepreneuriaux</span><span>Entrepreneuriat culturel</span><span>Président — Compagnie Arts Sauveurs</span><span>Secrétaire — Kara Stand Up Club</span><span>Organisation d’événements culturels</span><span>Fier des ODD</span><span>RIAK</span><span>Management</span><span>Recherche de fonds</span></div><h4>Communication &amp; marketing</h4><div class="skill-tags"><span>Marketing digital</span><span>Communication d’entreprise</span><span>Relations publiques</span><span>Stratégie de communication</span><span>Stratégie marketing</span><span>Communication digitale</span><span>Stratégie de contenu</span><span>Storytelling</span><span>Community management</span><span>Rédaction</span><span>Création de contenus</span></div></div>
+          </details>
+          <details class="skill-carousel-card">
+            <summary><span class="carousel-icon" aria-hidden="true">✦</span><h3>Qualités humaines &amp; relationnelles</h3><p>Écoute, adaptabilité, esprit d’équipe et engagement citoyen.</p><span class="carousel-action">Cliquer pour découvrir <b aria-hidden="true">＋</b></span></summary>
+            <div class="skill-carousel-details"><div class="skill-tags"><span>Intelligence émotionnelle</span><span>Aisance oratoire</span><span>Captation du public</span><span>Pitch d’impact</span><span>Leadership</span><span>Esprit d’initiative</span><span>Travail en équipe</span><span>Adaptabilité</span><span>Curiosité</span><span>Apprentissage rapide</span><span>Résolution de problèmes</span><span>Collecte de données</span><span>Animation communautaire</span><span>Travail collaboratif</span><span>Engagement citoyen</span></div></div>
+          </details>
+          <details class="skill-carousel-card">
+            <summary><span class="carousel-icon" aria-hidden="true">文</span><h3>Compétences linguistiques</h3><p>Langues, communication interculturelle et sciences du langage.</p><span class="carousel-action">Cliquer pour découvrir <b aria-hidden="true">＋</b></span></summary>
+            <div class="skill-carousel-details"><div class="skill-tags"><span>Français — langue maternelle / bilingue</span><span>Anglais — niveau intermédiaire</span><span>Langue des signes — courant</span><span>Italien — débutant</span><span>Espagnol — débutant</span><span>Langues locales du Togo — 3+ langues</span><span>Description et comparaison des langues</span></div><p class="skill-note">Les niveaux linguistiques sont présentés selon les indications communiquées.</p></div>
+          </details>
         </div>
-        <div class="skill-group"><h3>Management, stratégie &amp; entrepreneuriat</h3>
-          <h4>Gestion &amp; leadership</h4><div class="skill-tags"><span>Notions de gestion de projet</span><span>Pilotage de projets entrepreneuriaux</span><span>Entrepreneuriat culturel</span><span>Président — Compagnie Arts Sauveurs</span><span>Secrétaire — Kara Stand Up Club</span><span>Organisation d’événements culturels</span><span>Fier des ODD</span><span>RIAK</span><span>Management</span><span>Recherche de fonds</span></div>
-          <h4>Communication &amp; marketing</h4><div class="skill-tags"><span>Marketing digital</span><span>Communication d’entreprise</span><span>Relations publiques</span><span>Stratégie de communication</span><span>Stratégie marketing</span><span>Communication digitale</span><span>Stratégie de contenu</span><span>Storytelling</span><span>Community management</span><span>Rédaction</span><span>Création de contenus</span></div>
-        </div>
-        <div class="skill-group"><h3>Qualités humaines &amp; relationnelles</h3><div class="skill-tags"><span>Intelligence émotionnelle</span><span>Aisance oratoire</span><span>Captation du public</span><span>Pitch d’impact</span><span>Leadership</span><span>Esprit d’initiative</span><span>Travail en équipe</span><span>Adaptabilité</span><span>Curiosité</span><span>Apprentissage rapide</span><span>Résolution de problèmes</span><span>Collecte de données</span><span>Animation communautaire</span><span>Travail collaboratif</span><span>Engagement citoyen</span></div></div>
-        <div class="skill-group"><h3>Compétences linguistiques</h3><div class="skill-tags"><span>Français — langue maternelle / bilingue</span><span>Anglais — niveau intermédiaire</span><span>Langue des signes — courant</span><span>Italien — débutant</span><span>Espagnol — débutant</span><span>Langues locales du Togo — 3+ langues</span><span>Description et comparaison des langues</span></div><p class="skill-note">Les niveaux linguistiques sont présentés selon les indications communiquées.</p></div>
       </div>
     </div>
   </section>
