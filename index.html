@@ -256,6 +256,18 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
 @keyframes portrait-cinematic-zoom{0%,100%{transform:scale(1)}50%{transform:scale(1.065)}}
 @media(prefers-reduced-motion:reduce){.about-full .about-photo .portrait-frame,.about-full .about-photo .portrait-photo,.about-full .about-photo .portrait-frame:before{animation:none}}
 </style>
+<style>
+/* Compétences techniques : grille d'icônes de marques */
+.tech-skill-group{grid-column:1/-1}
+.tech-icon-note{color:var(--muted);font-size:.88rem;margin:-5px 0 18px}
+.tech-skill-group h4{font-size:.9rem;color:#e7e9ee;margin:20px 0 11px}
+.tech-icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(66px,1fr));gap:10px}
+.tech-icon{height:68px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.1);border-radius:13px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.018));transition:transform .22s ease,border-color .22s ease,background .22s ease;cursor:help}
+.tech-icon img{width:31px;height:31px;object-fit:contain;display:block}
+.tech-icon:hover{transform:translateY(-4px) scale(1.04);border-color:var(--gold);background:rgba(248,185,35,.09)}
+.tech-emoji{font-size:1.8rem;line-height:1;color:var(--gold)}
+@media(max-width:600px){.tech-icon-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.tech-icon{height:62px}.tech-icon img{width:28px;height:28px}}
+</style>
 </head>
 <body>
 <header>
@@ -340,10 +352,47 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
       <p class="section-kicker">Savoir-faire</p><h2>Mes <span class="gold">compétences</span></h2>
       <p class="section-intro">Un profil transversal qui associe technologies numériques, création artistique, communication, gestion de projets et ouverture culturelle.</p>
       <div class="skills">
-        <div class="skill-group"><h3>01. Compétences techniques &amp; numériques</h3>
-          <h4>Développement web &amp; mobile</h4><div class="skill-tags"><span>HTML</span><span>CSS</span><span>Bootstrap</span><span>Tailwind CSS</span><span>JavaScript</span><span>PHP</span><span>Laravel</span><span>Python</span><span>MySQL</span><span>React</span><span>Flutter</span><span>Création de sites web</span><span>Applications mobiles</span></div>
-          <h4>Outils &amp; environnements</h4><div class="skill-tags"><span>Git</span><span>GitHub</span><span>Microsoft Azure</span><span>Google Cloud Platform</span><span>Linux</span><span>Windows</span><span>iOS</span><span>Visual Studio Code</span><span>Support informatique</span><span>Word</span><span>Excel</span><span>PowerPoint</span></div>
-          <h4>Design, création &amp; outils numériques</h4><div class="skill-tags"><span>UI/UX design</span><span>Figma</span><span>Canva</span><span>Photoshop</span><span>Adobe Creative Cloud</span><span>Premiere Pro</span><span>CapCut</span><span>Outils d’intelligence artificielle</span><span>Logiciels de collecte de données</span><span>Création de contenus pour les réseaux sociaux</span></div>
+        <div class="skill-group tech-skill-group"><h3>01. Compétences techniques &amp; numériques</h3>
+          <p class="tech-icon-note">Les technologies et outils que j’utilise, présentés par leurs icônes. Survole ou touche une icône pour afficher son nom.</p>
+          <h4>Développement web &amp; mobile</h4>
+          <div class="tech-icon-grid" aria-label="Technologies web et mobile">
+            <span class="tech-icon" title="HTML5" aria-label="HTML5"><img src="https://cdn.simpleicons.org/html5" alt="HTML5"></span>
+            <span class="tech-icon" title="CSS3" aria-label="CSS3"><img src="https://cdn.simpleicons.org/css3" alt="CSS3"></span>
+            <span class="tech-icon" title="Bootstrap" aria-label="Bootstrap"><img src="https://cdn.simpleicons.org/bootstrap" alt="Bootstrap"></span>
+            <span class="tech-icon" title="Tailwind CSS" aria-label="Tailwind CSS"><img src="https://cdn.simpleicons.org/tailwindcss" alt="Tailwind CSS"></span>
+            <span class="tech-icon" title="JavaScript" aria-label="JavaScript"><img src="https://cdn.simpleicons.org/javascript" alt="JavaScript"></span>
+            <span class="tech-icon" title="PHP" aria-label="PHP"><img src="https://cdn.simpleicons.org/php" alt="PHP"></span>
+            <span class="tech-icon" title="Laravel" aria-label="Laravel"><img src="https://cdn.simpleicons.org/laravel" alt="Laravel"></span>
+            <span class="tech-icon" title="Python" aria-label="Python"><img src="https://cdn.simpleicons.org/python" alt="Python"></span>
+            <span class="tech-icon" title="MySQL" aria-label="MySQL"><img src="https://cdn.simpleicons.org/mysql" alt="MySQL"></span>
+            <span class="tech-icon" title="React" aria-label="React"><img src="https://cdn.simpleicons.org/react" alt="React"></span>
+            <span class="tech-icon" title="Flutter" aria-label="Flutter"><img src="https://cdn.simpleicons.org/flutter" alt="Flutter"></span>
+          </div>
+          <h4>Outils &amp; environnements</h4>
+          <div class="tech-icon-grid" aria-label="Outils et environnements numériques">
+            <span class="tech-icon" title="Git" aria-label="Git"><img src="https://cdn.simpleicons.org/git" alt="Git"></span>
+            <span class="tech-icon" title="GitHub" aria-label="GitHub"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub"></span>
+            <span class="tech-icon" title="Microsoft Azure" aria-label="Microsoft Azure"><img src="https://cdn.simpleicons.org/microsoftazure" alt="Microsoft Azure"></span>
+            <span class="tech-icon" title="Google Cloud" aria-label="Google Cloud"><img src="https://cdn.simpleicons.org/googlecloud" alt="Google Cloud"></span>
+            <span class="tech-icon" title="Linux" aria-label="Linux"><img src="https://cdn.simpleicons.org/linux" alt="Linux"></span>
+            <span class="tech-icon" title="Windows" aria-label="Windows"><img src="https://cdn.simpleicons.org/windows11" alt="Windows"></span>
+            <span class="tech-icon" title="Visual Studio Code" aria-label="Visual Studio Code"><img src="https://cdn.simpleicons.org/visualstudiocode" alt="Visual Studio Code"></span>
+            <span class="tech-icon" title="Microsoft Word" aria-label="Microsoft Word"><img src="https://cdn.simpleicons.org/microsoftword" alt="Microsoft Word"></span>
+            <span class="tech-icon" title="Microsoft Excel" aria-label="Microsoft Excel"><img src="https://cdn.simpleicons.org/microsoftexcel" alt="Microsoft Excel"></span>
+            <span class="tech-icon" title="Microsoft PowerPoint" aria-label="Microsoft PowerPoint"><img src="https://cdn.simpleicons.org/microsoftpowerpoint" alt="Microsoft PowerPoint"></span>
+          </div>
+          <h4>Design, audiovisuel &amp; outils numériques</h4>
+          <div class="tech-icon-grid" aria-label="Design et création numérique">
+            <span class="tech-icon" title="Figma / UI-UX" aria-label="Figma / UI-UX"><img src="https://cdn.simpleicons.org/figma" alt="Figma / UI-UX"></span>
+            <span class="tech-icon" title="Canva" aria-label="Canva"><img src="https://cdn.simpleicons.org/canva" alt="Canva"></span>
+            <span class="tech-icon" title="Adobe Photoshop" aria-label="Adobe Photoshop"><img src="https://cdn.simpleicons.org/adobephotoshop" alt="Adobe Photoshop"></span>
+            <span class="tech-icon" title="Adobe Premiere Pro" aria-label="Adobe Premiere Pro"><img src="https://cdn.simpleicons.org/adobepremierepro" alt="Adobe Premiere Pro"></span>
+            <span class="tech-icon" title="CapCut" aria-label="CapCut"><img src="https://cdn.simpleicons.org/capcut/ffffff" alt="CapCut"></span>
+            <span class="tech-icon" title="Intelligence artificielle" aria-label="Intelligence artificielle"><span class="tech-emoji">✳</span></span>
+            <span class="tech-icon" title="Support informatique" aria-label="Support informatique"><span class="tech-emoji">⌘</span></span>
+            <span class="tech-icon" title="Collecte de données" aria-label="Collecte de données"><span class="tech-emoji">▤</span></span>
+            <span class="tech-icon" title="Création de contenus pour les réseaux sociaux" aria-label="Création de contenus pour les réseaux sociaux"><span class="tech-emoji">◎</span></span>
+          </div>
         </div>
         <div class="skill-group"><h3>02. Compétences créatives &amp; artistiques</h3>
           <h4>Écriture &amp; scène</h4><div class="skill-tags"><span>Écriture de scénarios</span><span>Scénarisation (certificat)</span><span>Dramaturgie</span><span>Écriture de sketchs</span><span>Stand-up</span><span>Théâtre</span><span>Jeu d’acteur</span><span>Animation radio et plateaux</span><span>Prise de parole en public</span><span>Performance artistique</span></div>
