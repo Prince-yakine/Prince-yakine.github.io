@@ -270,26 +270,29 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
 </style>
 <style>
 /* Alignement et libellés des compétences */
-/* Carrousel interactif des compétences non techniques */
-#competences .skills-carousel{grid-column:1/-1;display:grid;grid-auto-columns:minmax(260px,1fr);grid-auto-flow:column;gap:15px;overflow-x:auto;padding:5px 3px 18px;scroll-snap-type:x proximity;overscroll-behavior-x:contain;scrollbar-color:var(--gold) var(--panel);scrollbar-width:thin}
-#competences .skill-carousel-card{min-width:0;align-self:start;scroll-snap-align:start;border:1px solid var(--line);border-radius:20px;background:linear-gradient(150deg,var(--panel2),var(--panel));overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s}
-#competences .skill-carousel-card:hover,#competences .skill-carousel-card[open]{border-color:rgba(248,185,35,.75);box-shadow:0 12px 28px rgba(0,0,0,.2)}
-#competences .skill-carousel-card summary{list-style:none;cursor:pointer;min-height:230px;padding:23px;display:flex;flex-direction:column;align-items:flex-start}
+/* Carrousels lumineux avec effet 3D */
+#competences .skills-carousel{grid-column:1/-1;display:grid;grid-auto-columns:minmax(265px,1fr);grid-auto-flow:column;gap:20px;overflow-x:auto;padding:18px 12px 28px;perspective:1100px;transform-style:preserve-3d;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-color:var(--gold) var(--panel);scrollbar-width:thin}
+#competences .skill-carousel-card{position:relative;min-width:0;align-self:start;scroll-snap-align:center;isolation:isolate;overflow:hidden;border:1px solid rgba(248,185,35,.5);border-radius:22px;background:linear-gradient(145deg,#22202a 0%,#151822 52%,#0e1017 100%);box-shadow:0 14px 0 -7px rgba(248,185,35,.22),0 22px 38px rgba(0,0,0,.42),inset 0 1px rgba(255,255,255,.12);transform:perspective(1000px) rotateY(-5deg) rotateX(2deg) translateZ(0);transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .35s,filter .35s}
+#competences .skill-carousel-card:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 15% 0%,rgba(248,185,35,.23),transparent 42%),linear-gradient(135deg,rgba(255,255,255,.07),transparent 50%);opacity:.85;transition:opacity .3s}
+#competences .skill-carousel-card:after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.035),inset 0 -18px 30px rgba(0,0,0,.2)}
+#competences .skill-carousel-card:hover,#competences .skill-carousel-card:focus-within{transform:perspective(1000px) rotateY(0) rotateX(0) translateY(-8px) translateZ(18px);border-color:var(--gold);box-shadow:0 18px 0 -7px rgba(248,185,35,.34),0 30px 55px rgba(0,0,0,.55),0 0 28px rgba(248,185,35,.16),inset 0 1px rgba(255,255,255,.2)}
+#competences .skill-carousel-card[open]{transform:perspective(1000px) rotateY(0) rotateX(0);border-color:var(--gold);box-shadow:0 18px 40px rgba(0,0,0,.48),0 0 24px rgba(248,185,35,.12)}
+#competences .skill-carousel-card summary{position:relative;z-index:1;list-style:none;cursor:pointer;min-height:245px;padding:25px;display:flex;flex-direction:column;align-items:flex-start;transform:translateZ(24px)}
 #competences .skill-carousel-card summary::-webkit-details-marker{display:none}
-#competences .carousel-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:rgba(248,185,35,.12);color:var(--gold);font-size:1.55rem;margin-bottom:18px}
-#competences .skill-carousel-card summary h3{font-size:1.08rem;line-height:1.35;margin-bottom:10px}
-#competences .skill-carousel-card summary p{font-size:.9rem;color:var(--muted);margin-bottom:20px}
-#competences .carousel-action{margin-top:auto;width:100%;display:flex;justify-content:space-between;align-items:center;padding-top:13px;border-top:1px solid var(--line);color:var(--gold);font-size:.82rem;font-weight:800}
-#competences .carousel-action b{font-size:1.2rem;transition:transform .2s}
-#competences .skill-carousel-card[open] .carousel-action b{transform:rotate(45deg)}
-#competences .skill-carousel-details{padding:0 22px 23px;border-top:1px solid rgba(248,185,35,.2)}
-#competences .skill-carousel-details h4{font-size:.9rem;color:#e7e9ee;margin:18px 0 10px}
+#competences .carousel-icon{display:grid;place-items:center;width:54px;height:54px;border:1px solid rgba(248,185,35,.45);border-radius:17px;background:linear-gradient(145deg,rgba(248,185,35,.25),rgba(248,185,35,.06));color:var(--gold2);font-size:1.7rem;margin-bottom:20px;box-shadow:0 8px 20px rgba(0,0,0,.25),inset 0 1px rgba(255,255,255,.16);text-shadow:0 0 18px rgba(248,185,35,.6)}
+#competences .skill-carousel-card summary h3{font-size:1.1rem;line-height:1.35;margin-bottom:10px;text-shadow:0 2px 16px rgba(0,0,0,.4)}
+#competences .skill-carousel-card summary p{font-size:.9rem;color:#c1c5d0;margin-bottom:20px}
+#competences .carousel-action{margin-top:auto;width:100%;display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid rgba(248,185,35,.25);color:var(--gold2);font-size:.82rem;font-weight:850;letter-spacing:.2px}
+#competences .carousel-action b{display:grid;place-items:center;width:28px;height:28px;border:1px solid rgba(248,185,35,.35);border-radius:50%;font-size:1.25rem;transition:transform .3s,background .3s}
+#competences .skill-carousel-card[open] .carousel-action b{transform:rotate(45deg);background:rgba(248,185,35,.15)}
+#competences .skill-carousel-details{position:relative;z-index:1;padding:0 23px 25px;border-top:1px solid rgba(248,185,35,.25);background:rgba(4,6,10,.28);animation:skill-details-in .35s ease both}
+@keyframes skill-details-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+#competences .skill-carousel-details h4{font-size:.9rem;color:var(--gold2);margin:18px 0 10px}
 #competences .skill-carousel-details .skill-tags{gap:8px}
-#competences .skill-carousel-details .skill-tags span{font-size:.8rem}
-#competences .skill-carousel-card summary:focus-visible{outline:2px solid var(--gold);outline-offset:-4px;border-radius:18px}
-@media(max-width:600px){#competences .skills-carousel{grid-auto-columns:minmax(82%,1fr);gap:12px}#competences .skill-carousel-card summary{min-height:215px;padding:19px}#competences .skill-carousel-details{padding:0 18px 20px}}
-@media(prefers-reduced-motion:reduce){#competences .skill-carousel-card{transition:none}}
-
+#competences .skill-carousel-details .skill-tags span{font-size:.8rem;border-color:rgba(248,185,35,.18);background:rgba(255,255,255,.035)}
+#competences .skill-carousel-card summary:focus-visible{outline:2px solid var(--gold);outline-offset:-5px;border-radius:18px}
+@media(max-width:600px){#competences .skills-carousel{grid-auto-columns:minmax(84%,1fr);gap:14px;padding:14px 8px 24px;perspective:850px}#competences .skill-carousel-card{transform:perspective(850px) rotateY(-2deg)}#competences .skill-carousel-card summary{min-height:225px;padding:21px}#competences .skill-carousel-details{padding:0 18px 21px}}
+@media(prefers-reduced-motion:reduce){#competences .skill-carousel-card,#competences .carousel-icon,#competences .carousel-action b{transition:none;animation:none;transform:none}}
 #competences .skill-group h3{font-size:1.12rem;line-height:1.35}
 #competences .skill-group h4{margin-top:22px}
 #competences .tech-icon-grid{grid-template-columns:repeat(auto-fill,minmax(76px,1fr));}
