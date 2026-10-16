@@ -180,6 +180,15 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
 .about-full .about-description{margin-bottom:28px}
 @media(max-width:850px){.about-full .about-hero-grid{grid-template-columns:minmax(0,1fr) minmax(130px,.55fr);gap:18px}.about-full .about-photo{justify-self:end;max-width:230px}.about-full .about-stats .stats-grid{width:calc(100% - 20px)}}@media(max-width:520px){.about-full .about-hero-grid{grid-template-columns:1fr}.about-full .about-photo{justify-self:start;max-width:220px}.about-full .about-stats .stat-item{padding:8px 4px}.about-full .about-stats .stat-item span{font-size:.58rem}}
 
+
+/* Animation douce et permanente de la photo dans À propos */
+.about-full .about-photo .portrait-frame{overflow:hidden;position:relative;box-shadow:0 0 0 1px #ffc52f55,0 12px 35px #0006;animation:about-photo-float 5s ease-in-out infinite}
+.about-full .about-photo .portrait-frame:before{content:"";position:absolute;z-index:2;inset:-40% -70%;pointer-events:none;background:linear-gradient(110deg,transparent 42%,#ffffff18 50%,transparent 58%);transform:translateX(-70%);animation:about-photo-shine 6s ease-in-out infinite}
+.about-full .about-photo .portrait-photo{transform-origin:center;animation:about-photo-zoom 7s ease-in-out infinite}
+@keyframes about-photo-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes about-photo-zoom{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@keyframes about-photo-shine{0%,55%,100%{transform:translateX(-70%)}75%{transform:translateX(70%)}}
+@media(prefers-reduced-motion:reduce){.about-full .about-photo .portrait-frame,.about-full .about-photo .portrait-photo,.about-full .about-photo .portrait-frame:before{animation:none}}
 </style>
 </head>
 <body>
