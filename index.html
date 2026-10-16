@@ -167,6 +167,19 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
 @media(max-width:850px){.hero:before{background-size:280px 220px}.hero-grid{gap:34px}}
 @media(prefers-reduced-motion:reduce){.hero:before,.hero:after{animation:none}.typing-caret{animation:none}}
 
+
+/* Présentation complète intégrée à « À propos de moi » */
+.about-full .about-hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(210px,.65fr);gap:34px;align-items:center;margin:12px 0 32px}
+.about-full .about-copy .eyebrow{margin-bottom:16px}
+.about-full .about-roles{font-size:clamp(.95rem,1.8vw,1.18rem);font-weight:750;line-height:1.8;margin-bottom:18px}
+.about-full .section-intro{margin-bottom:0}
+.about-full .about-photo{width:100%;max-width:300px;justify-self:end}
+.about-full .about-photo .portrait-frame{border-radius:4px;aspect-ratio:4/5}
+.about-full .about-stats{margin:24px 0 30px;width:100%}
+.about-full .about-stats .stats-grid{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+.about-full .about-description{margin-bottom:28px}
+@media(max-width:850px){.about-full .about-hero-grid{grid-template-columns:1fr;gap:24px}.about-full .about-photo{justify-self:start;max-width:260px}.about-full .about-stats .stats-grid{width:calc(100% - 20px)}}
+
 </style>
 </head>
 <body>
@@ -208,10 +221,28 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
       <div class="stat-item"><strong class="stat-number" data-target="5">+0</strong><span>Organisations internationales</span></div>
     </div>
   </section>
-  <section id="apropos" class="reveal">
+  <section id="apropos" class="reveal about-full">
     <div class="container">
       <p class="section-kicker">Qui suis-je ?</p><h2>À propos <span class="gold">de moi</span></h2>
-      <p class="section-intro">Créatif polyvalent basé à Kara, je réunis les sciences du langage, la communication, l’expression artistique et les outils numériques. Mon fil conducteur : raconter des histoires, mobiliser les personnes et faire émerger des projets qui répondent à des besoins réels.</p>
+      <div class="about-hero-grid">
+        <div class="about-copy">
+          <div class="eyebrow">Créativité avec impact</div>
+          <p class="about-roles">Chargé de communication · Créateur de contenu · Scénariste · Humoriste · Gestion de projet · Athlète · Scout · Développeur web</p>
+          <p class="section-intro">Je transforme les idées en histoires, les histoires en projets et les projets en solutions concrètes. À la croisée de la communication, de l’art, de l’audiovisuel et du numérique, je conçois des initiatives créatives à impact culturel et social.</p>
+        </div>
+        <aside class="about-photo">
+          <div class="portrait-frame"><img class="portrait-photo" src="portrait.webp" alt="Photo de profil" loading="lazy" decoding="async"></div>
+        </aside>
+      </div>
+      <div class="stats-band about-stats" aria-label="Quelques chiffres clés">
+        <div class="stats-grid">
+          <div class="stat-item"><strong class="stat-number" data-target="5">+0</strong><span>Années d’expériences</span></div>
+          <div class="stat-item"><strong class="stat-number" data-target="10">+0</strong><span>Certificats internationaux</span></div>
+          <div class="stat-item"><strong class="stat-number" data-target="10">+0</strong><span>Projets</span></div>
+          <div class="stat-item"><strong class="stat-number" data-target="5">+0</strong><span>Organisations internationales</span></div>
+        </div>
+      </div>
+      <p class="section-intro about-description">Créatif polyvalent basé à Kara, je réunis les sciences du langage, la communication, l’expression artistique et les outils numériques. Mon fil conducteur : raconter des histoires, mobiliser les personnes et faire émerger des projets qui répondent à des besoins réels.</p>
       <div class="grid">
         <article class="card"><div class="card-icon">✦</div><h3>Communication &amp; stratégie</h3><p>Storytelling, création de contenus, présence digitale, animation de communautés et valorisation de projets.</p></article>
         <article class="card"><div class="card-icon">🎬</div><h3>Art &amp; audiovisuel</h3><p>Humour, écriture de sketches et de scénarios, jeu d’acteur, cinéma, photographie et organisation culturelle.</p></article>
