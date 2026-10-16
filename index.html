@@ -134,6 +134,27 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;letter-spacing:-.045em;ma
 @media(max-width:850px){.tiktok-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
 @media(max-width:520px){.tiktok-gallery{grid-template-columns:1fr;gap:16px}.tiktok-card{max-width:420px;width:100%;margin-inline:auto}.performance-screen-intro{min-height:210px}}
 
+
+/* Couvertures visuelles des vidéos — ouverture directe des clips TikTok */
+.video-cover{position:relative;display:flex;min-height:210px;aspect-ratio:4/3;overflow:hidden;flex-direction:column;justify-content:flex-end;gap:8px;padding:18px;text-decoration:none;border-radius:12px;color:#fff;background:#10131b;isolation:isolate}
+.video-cover:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(circle at 78% 28%,rgba(255,255,255,.25),transparent 20%),linear-gradient(135deg,#171a22,#07090d)}
+.video-cover:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.18) 45%,rgba(0,0,0,.9) 100%);transition:opacity .25s}
+.cover-gold:before{background:radial-gradient(circle at 70% 25%,rgba(255,190,35,.75),transparent 24%),radial-gradient(circle at 25% 70%,rgba(255,90,15,.3),transparent 30%),linear-gradient(135deg,#48240b,#101016 70%)}
+.cover-blue:before{background:radial-gradient(circle at 70% 28%,rgba(42,174,255,.75),transparent 25%),radial-gradient(circle at 20% 70%,rgba(20,90,160,.5),transparent 32%),linear-gradient(135deg,#092b43,#090b12 72%)}
+.cover-purple:before{background:radial-gradient(circle at 70% 28%,rgba(183,91,255,.7),transparent 25%),radial-gradient(circle at 20% 75%,rgba(255,50,150,.35),transparent 30%),linear-gradient(135deg,#30154d,#090b12 72%)}
+.cover-teal:before{background:radial-gradient(circle at 70% 25%,rgba(20,220,190,.7),transparent 24%),radial-gradient(circle at 20% 70%,rgba(25,130,145,.4),transparent 32%),linear-gradient(135deg,#073b3b,#090b12 72%)}
+.cover-number{position:absolute;top:14px;left:15px;font-size:.72rem;font-weight:900;letter-spacing:1px;color:#fff}.cover-number i{font-style:normal;color:#c3c7d0}
+.cover-orb{position:absolute;top:27%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:88px;height:88px;border:1px solid rgba(255,255,255,.42);border-radius:50%;background:rgba(5,7,12,.26);box-shadow:0 0 0 10px rgba(255,255,255,.035),0 0 40px rgba(255,255,255,.12);font-size:2.7rem;transition:transform .35s}
+.video-cover:hover .cover-orb{transform:translate(-50%,-50%) scale(1.12) rotate(-7deg)}
+.cover-title{font-size:clamp(1.08rem,2vw,1.35rem);font-weight:900;line-height:1.15;letter-spacing:-.03em}
+.cover-tag{align-self:flex-start;padding:4px 9px;border-radius:999px;background:var(--gold);color:#17130a;font-size:.62rem;font-weight:950;letter-spacing:1px}
+.cover-play{position:absolute;right:14px;bottom:54px;display:grid;place-items:center;width:38px;height:38px;border:1px solid rgba(255,255,255,.8);border-radius:50%;padding-left:3px;background:rgba(0,0,0,.3);font-size:.8rem;backdrop-filter:blur(5px)}
+.cover-bottom{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-top:3px;padding-top:9px;border-top:1px solid rgba(255,255,255,.22);font-size:.54rem;font-weight:800;letter-spacing:1px;color:#e0e3ea}
+.cover-bottom b{color:var(--gold);font-size:.9rem}
+.tiktok-card{padding:10px}
+.tiktok-card-heading{padding:10px 3px 3px}
+@media(max-width:520px){.video-cover{min-height:230px;aspect-ratio:5/4}}
+
 /* Galerie cinématique des prestations */
 .performances-section{position:relative;overflow:hidden;background:radial-gradient(ellipse at 85% 25%,rgba(248,185,35,.075),transparent 36%),linear-gradient(180deg,rgba(255,255,255,.012),transparent)}
 .performance-feature{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(240px,.7fr);gap:26px;align-items:center;margin-top:34px}
@@ -312,60 +333,105 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
           </div>
         </div>
       </div>
-      <div class="tiktok-gallery" aria-label="Vidéos de mes prestations">
+      <div class="tiktok-gallery" aria-label="Couvertures des vidéos de mes prestations">
         <article class="tiktok-card">
-          <div class="tiktok-card-heading"><span>VIDÉO 01</span><a href="https://vt.tiktok.com/ZSgNRNvQJ/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
-          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRNvQJ/" data-video-id="" style="max-width:605px;min-width:0;">
-            <section><a href="https://vt.tiktok.com/ZSgNRNvQJ/" target="_blank" rel="noopener noreferrer">Voir la vidéo 1 sur TikTok</a></section>
-          </blockquote>
+          <a class="video-cover cover-gold" href="https://vt.tiktok.com/ZSgNRNvQJ/" target="_blank" rel="noopener noreferrer" aria-label="Lire Stand-up & scène sur TikTok">
+            <span class="cover-number">01 <i>/ 09</i></span>
+            <span class="cover-orb" aria-hidden="true">🎙</span>
+            <span class="cover-title">Stand-up & scène</span>
+            <span class="cover-tag">HUMOUR</span>
+            <span class="cover-play" aria-hidden="true">▶</span>
+            <span class="cover-bottom">RAUCH YAKINE TCHONTCHOKO <b>↗</b></span>
+          </a>
+          <div class="tiktok-card-heading"><span>VIDÉO 01</span><a href="https://vt.tiktok.com/ZSgNRNvQJ/" target="_blank" rel="noopener noreferrer">Regarder sur TikTok ↗</a></div>
         </article>
         <article class="tiktok-card">
-          <div class="tiktok-card-heading"><span>VIDÉO 02</span><a href="https://vt.tiktok.com/ZSgNR2D39/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
-          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNR2D39/" data-video-id="" style="max-width:605px;min-width:0;">
-            <section><a href="https://vt.tiktok.com/ZSgNR2D39/" target="_blank" rel="noopener noreferrer">Voir la vidéo 2 sur TikTok</a></section>
-          </blockquote>
+          <a class="video-cover cover-blue" href="https://vt.tiktok.com/ZSgNR2D39/" target="_blank" rel="noopener noreferrer" aria-label="Lire Acteur en action sur TikTok">
+            <span class="cover-number">02 <i>/ 09</i></span>
+            <span class="cover-orb" aria-hidden="true">🎬</span>
+            <span class="cover-title">Acteur en action</span>
+            <span class="cover-tag">CINÉMA</span>
+            <span class="cover-play" aria-hidden="true">▶</span>
+            <span class="cover-bottom">RAUCH YAKINE TCHONTCHOKO <b>↗</b></span>
+          </a>
+          <div class="tiktok-card-heading"><span>VIDÉO 02</span><a href="https://vt.tiktok.com/ZSgNR2D39/" target="_blank" rel="noopener noreferrer">Regarder sur TikTok ↗</a></div>
         </article>
         <article class="tiktok-card">
-          <div class="tiktok-card-heading"><span>VIDÉO 03</span><a href="https://vt.tiktok.com/ZSgNRVdET/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
-          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRVdET/" data-video-id="" style="max-width:605px;min-width:0;">
-            <section><a href="https://vt.tiktok.com/ZSgNRVdET/" target="_blank" rel="noopener noreferrer">Voir la vidéo 3 sur TikTok</a></section>
-          </blockquote>
+          <a class="video-cover cover-purple" href="https://vt.tiktok.com/ZSgNRVdET/" target="_blank" rel="noopener noreferrer" aria-label="Lire L’œil du créateur sur TikTok">
+            <span class="cover-number">03 <i>/ 09</i></span>
+            <span class="cover-orb" aria-hidden="true">📸</span>
+            <span class="cover-title">L’œil du créateur</span>
+            <span class="cover-tag">PHOTO</span>
+            <span class="cover-play" aria-hidden="true">▶</span>
+            <span class="cover-bottom">RAUCH YAKINE TCHONTCHOKO <b>↗</b></span>
+          </a>
+          <div class="tiktok-card-heading"><span>VIDÉO 03</span><a href="https://vt.tiktok.com/ZSgNRVdET/" target="_blank" rel="noopener noreferrer">Regarder sur TikTok ↗</a></div>
         </article>
         <article class="tiktok-card">
-          <div class="tiktok-card-heading"><span>VIDÉO 04</span><a href="https://vt.tiktok.com/ZSgNRPBGg/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
-          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRPBGg/" data-video-id="" style="max-width:605px;min-width:0;">
-            <section><a href="https://vt.tiktok.com/ZSgNRPBGg/" target="_blank" rel="noopener noreferrer">Voir la vidéo 4 sur TikTok</a></section>
-          </blockquote>
+          <a class="video-cover cover-teal" href="https://vt.tiktok.com/ZSgNRPBGg/" target="_blank" rel="noopener noreferrer" aria-label="Lire Dans les coulisses sur TikTok">
+            <span class="cover-number">04 <i>/ 09</i></span>
+            <span class="cover-orb" aria-hidden="true">🎥</span>
+            <span class="cover-title">Dans les coulisses</span>
+            <span class="cover-tag">COULISSES</span>
+            <span class="cover-play" aria-hidden="true">▶</span>
+            <span class="cover-bottom">RAUCH YAKINE TCHONTCHOKO <b>↗</b></span>
+          </a>
+          <div class="tiktok-card-heading"><span>VIDÉO 04</span><a href="https://vt.tiktok.com/ZSgNRPBGg/" target="_blank" rel="noopener noreferrer">Regarder sur TikTok ↗</a></div>
         </article>
         <article class="tiktok-card">
-          <div class="tiktok-card-heading"><span>VIDÉO 05</span><a href="https://vt.tiktok.com/ZSgNR9oJm/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
-          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNR9oJm/" data-video-id="" style="max-width:605px;min-width:0;">
-            <section><a href="https://vt.tiktok.com/ZSgNR9oJm/" target="_blank" rel="noopener noreferrer">Voir la vidéo 5 sur TikTok</a></section>
-          </blockquote>
+          <a class="video-cover cover-gold" href="https://vt.tiktok.com/ZSgNR9oJm/" target="_blank" rel="noopener noreferrer" aria-label="Lire Sketch & impro sur TikTok">
+            <span class="cover-number">05 <i>/ 09</i></span>
+            <span class="cover-orb" aria-hidden="true">✨</span>
+            <span class="cover-title">Sketch & impro</span>
+            <span class="cover-tag">STAND-UP</span>
+            <span class="cover-play" aria-hidden="true">▶</span>
+            <span class="cover-bottom">RAUCH YAKINE TCHONTCHOKO <b>↗</b></span>
+          </a>
+          <div class="tiktok-card-heading"><span>VIDÉO 05</span><a href="https://vt.tiktok.com/ZSgNR9oJm/" target="_blank" rel="noopener noreferrer">Regarder sur TikTok ↗</a></div>
         </article>
         <article class="tiktok-card">
-          <div class="tiktok-card-heading"><span>VIDÉO 06</span><a href="https://vt.tiktok.com/ZSgNRmjyQ/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
-          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRmjyQ/" data-video-id="" style="max-width:605px;min-width:0;">
-            <section><a href="https://vt.tiktok.com/ZSgNRmjyQ/" target="_blank" rel="noopener noreferrer">Voir la vidéo 6 sur TikTok</a></section>
-          </blockquote>
+          <a class="video-cover cover-blue" href="https://vt.tiktok.com/ZSgNRmjyQ/" target="_blank" rel="noopener noreferrer" aria-label="Lire Tournage en action sur TikTok">
+            <span class="cover-number">06 <i>/ 09</i></span>
+            <span class="cover-orb" aria-hidden="true">📹</span>
+            <span class="cover-title">Tournage en action</span>
+            <span class="cover-tag">VIDÉO</span>
+            <span class="cover-play" aria-hidden="true">▶</span>
+            <span class="cover-bottom">RAUCH YAKINE TCHONTCHOKO <b>↗</b></span>
+          </a>
+          <div class="tiktok-card-heading"><span>VIDÉO 06</span><a href="https://vt.tiktok.com/ZSgNRmjyQ/" target="_blank" rel="noopener noreferrer">Regarder sur TikTok ↗</a></div>
         </article>
         <article class="tiktok-card">
-          <div class="tiktok-card-heading"><span>VIDÉO 07</span><a href="https://vt.tiktok.com/ZSgNRsC8T/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
-          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRsC8T/" data-video-id="" style="max-width:605px;min-width:0;">
-            <section><a href="https://vt.tiktok.com/ZSgNRsC8T/" target="_blank" rel="noopener noreferrer">Voir la vidéo 7 sur TikTok</a></section>
-          </blockquote>
+          <a class="video-cover cover-purple" href="https://vt.tiktok.com/ZSgNRsC8T/" target="_blank" rel="noopener noreferrer" aria-label="Lire Une histoire à jouer sur TikTok">
+            <span class="cover-number">07 <i>/ 09</i></span>
+            <span class="cover-orb" aria-hidden="true">🎭</span>
+            <span class="cover-title">Une histoire à jouer</span>
+            <span class="cover-tag">ACTEUR</span>
+            <span class="cover-play" aria-hidden="true">▶</span>
+            <span class="cover-bottom">RAUCH YAKINE TCHONTCHOKO <b>↗</b></span>
+          </a>
+          <div class="tiktok-card-heading"><span>VIDÉO 07</span><a href="https://vt.tiktok.com/ZSgNRsC8T/" target="_blank" rel="noopener noreferrer">Regarder sur TikTok ↗</a></div>
         </article>
         <article class="tiktok-card">
-          <div class="tiktok-card-heading"><span>VIDÉO 08</span><a href="https://vt.tiktok.com/ZSgNRsnfC/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
-          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRsnfC/" data-video-id="" style="max-width:605px;min-width:0;">
-            <section><a href="https://vt.tiktok.com/ZSgNRsnfC/" target="_blank" rel="noopener noreferrer">Voir la vidéo 8 sur TikTok</a></section>
-          </blockquote>
+          <a class="video-cover cover-gold" href="https://vt.tiktok.com/ZSgNRsnfC/" target="_blank" rel="noopener noreferrer" aria-label="Lire Le public, la scène sur TikTok">
+            <span class="cover-number">08 <i>/ 09</i></span>
+            <span class="cover-orb" aria-hidden="true">🎤</span>
+            <span class="cover-title">Le public, la scène</span>
+            <span class="cover-tag">HUMOUR</span>
+            <span class="cover-play" aria-hidden="true">▶</span>
+            <span class="cover-bottom">RAUCH YAKINE TCHONTCHOKO <b>↗</b></span>
+          </a>
+          <div class="tiktok-card-heading"><span>VIDÉO 08</span><a href="https://vt.tiktok.com/ZSgNRsnfC/" target="_blank" rel="noopener noreferrer">Regarder sur TikTok ↗</a></div>
         </article>
         <article class="tiktok-card">
-          <div class="tiktok-card-heading"><span>VIDÉO 09</span><a href="https://vt.tiktok.com/ZSgNR9GhS/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
-          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNR9GhS/" data-video-id="" style="max-width:605px;min-width:0;">
-            <section><a href="https://vt.tiktok.com/ZSgNR9GhS/" target="_blank" rel="noopener noreferrer">Voir la vidéo 9 sur TikTok</a></section>
-          </blockquote>
+          <a class="video-cover cover-teal" href="https://vt.tiktok.com/ZSgNR9GhS/" target="_blank" rel="noopener noreferrer" aria-label="Lire Mon univers créatif sur TikTok">
+            <span class="cover-number">09 <i>/ 09</i></span>
+            <span class="cover-orb" aria-hidden="true">✦</span>
+            <span class="cover-title">Mon univers créatif</span>
+            <span class="cover-tag">CRÉATION</span>
+            <span class="cover-play" aria-hidden="true">▶</span>
+            <span class="cover-bottom">RAUCH YAKINE TCHONTCHOKO <b>↗</b></span>
+          </a>
+          <div class="tiktok-card-heading"><span>VIDÉO 09</span><a href="https://vt.tiktok.com/ZSgNR9GhS/" target="_blank" rel="noopener noreferrer">Regarder sur TikTok ↗</a></div>
         </article>
       </div>
       <div class="performance-categories" aria-label="Types de prestations">
