@@ -255,21 +255,6 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
 @keyframes portrait-cinematic-sweep{0%,15%{transform:translateX(-100%) rotate(8deg);opacity:0}30%{opacity:1}65%,100%{transform:translateX(100%) rotate(8deg);opacity:0}}
 @keyframes portrait-cinematic-zoom{0%,100%{transform:scale(1)}50%{transform:scale(1.065)}}
 @media(prefers-reduced-motion:reduce){.about-full .about-photo .portrait-frame,.about-full .about-photo .portrait-photo,.about-full .about-photo .portrait-frame:before{animation:none}}
-
-    .showreel-carousel-wrap{margin:28px 0 34px}
-    .showreel-carousel{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 2px 18px;scrollbar-width:thin}
-    .showreel-slide{flex:0 0 min(78vw,310px);max-width:310px;scroll-snap-align:start;border:1px solid rgba(255,255,255,.12);border-radius:18px;overflow:hidden;background:rgba(255,255,255,.035)}
-    .showreel-image-link{display:block;height:370px;background:#111;overflow:hidden}
-    .showreel-image-link img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}
-    .showreel-slide:hover img{transform:scale(1.035)}
-    .showreel-slide>p{padding:13px 15px;margin:0;color:var(--text,#fff);font-size:.92rem}
-    .showreel-video-link{height:370px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center;text-decoration:none;color:#fff;background:radial-gradient(circle at 50% 35%,rgba(0,190,180,.23),transparent 55%),linear-gradient(145deg,#111522,#08090d)}
-    .showreel-play{display:grid;place-items:center;width:64px;height:64px;border:1px solid rgba(255,255,255,.5);border-radius:50%;font-size:1.35rem;color:#e8bd69}
-    .showreel-video-link strong{font-size:1.1rem}
-    .showreel-video-link span:last-child{color:#e8bd69;font-size:.85rem}
-    .showreel-controls{display:flex;align-items:center;justify-content:center;gap:16px;color:var(--muted,#aaa);font-size:.84rem}
-    .showreel-control{width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,189,105,.55);background:transparent;color:#e8bd69;font-size:1.2rem;cursor:pointer}
-    @media(min-width:900px){.showreel-slide{flex-basis:300px}}
 </style>
 </head>
 <body>
@@ -348,52 +333,43 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
           </div>
         </div>
       </div>
-      <div class="showreel-carousel-wrap">
-        <div class="showreel-carousel" id="showreel-carousel" aria-label="Carrousel des photos et vidéos de mes prestations">
-        <article class="showreel-slide">
-          <a href="https://prince-yakine.github.io/1792016786530.jpg" target="_blank" rel="noopener noreferrer" class="showreel-image-link">
-            <img src="1792016786530.jpg" alt="Photo de prestation sur scène" loading="lazy">
-          </a>
-          <p>Photo de prestation sur scène</p>
+      <div class="tiktok-gallery" aria-label="Vidéos originales de mes prestations">
+        <article class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRNvQJ/" data-video-id="" style="max-width:605px;min-width:0;width:100%;margin:0 auto;"><section><a target="_blank" rel="noopener noreferrer" href="https://vt.tiktok.com/ZSgNRNvQJ/">Voir la vidéo 01 sur TikTok</a></section></blockquote>
+          <div class="tiktok-card-heading"><span>PRESTATION 01</span><a href="https://vt.tiktok.com/ZSgNRNvQJ/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
         </article>
-        <article class="showreel-slide">
-          <a href="https://prince-yakine.github.io/1792017262462.jpg" target="_blank" rel="noopener noreferrer" class="showreel-image-link">
-            <img src="1792017262462.jpg" alt="Photo de prestation — groupe sur scène" loading="lazy">
-          </a>
-          <p>Photo de prestation — groupe sur scène</p>
+        <article class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNR2D39/" data-video-id="" style="max-width:605px;min-width:0;width:100%;margin:0 auto;"><section><a target="_blank" rel="noopener noreferrer" href="https://vt.tiktok.com/ZSgNR2D39/">Voir la vidéo 02 sur TikTok</a></section></blockquote>
+          <div class="tiktok-card-heading"><span>PRESTATION 02</span><a href="https://vt.tiktok.com/ZSgNR2D39/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
         </article>
-        <article class="showreel-slide">
-          <a href="https://prince-yakine.github.io/1792017294203.jpg" target="_blank" rel="noopener noreferrer" class="showreel-image-link">
-            <img src="1792017294203.jpg" alt="Photo de prestation artistique" loading="lazy">
-          </a>
-          <p>Photo de prestation artistique</p>
+        <article class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRVdET/" data-video-id="" style="max-width:605px;min-width:0;width:100%;margin:0 auto;"><section><a target="_blank" rel="noopener noreferrer" href="https://vt.tiktok.com/ZSgNRVdET/">Voir la vidéo 03 sur TikTok</a></section></blockquote>
+          <div class="tiktok-card-heading"><span>PRESTATION 03</span><a href="https://vt.tiktok.com/ZSgNRVdET/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
         </article>
-        <article class="showreel-slide">
-          <a href="https://prince-yakine.github.io/1792017332103.jpg" target="_blank" rel="noopener noreferrer" class="showreel-image-link">
-            <img src="1792017332103.jpg" alt="Photo de prestation — humour" loading="lazy">
-          </a>
-          <p>Photo de prestation — humour</p>
+        <article class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRPBGg/" data-video-id="" style="max-width:605px;min-width:0;width:100%;margin:0 auto;"><section><a target="_blank" rel="noopener noreferrer" href="https://vt.tiktok.com/ZSgNRPBGg/">Voir la vidéo 04 sur TikTok</a></section></blockquote>
+          <div class="tiktok-card-heading"><span>PRESTATION 04</span><a href="https://vt.tiktok.com/ZSgNRPBGg/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
         </article>
-        <article class="showreel-slide">
-          <a href="https://prince-yakine.github.io/1792017601192~2.jpg" target="_blank" rel="noopener noreferrer" class="showreel-image-link">
-            <img src="1792017601192~2.jpg" alt="Photo de prestation audiovisuelle" loading="lazy">
-          </a>
-          <p>Photo de prestation audiovisuelle</p>
+        <article class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNR9oJm/" data-video-id="" style="max-width:605px;min-width:0;width:100%;margin:0 auto;"><section><a target="_blank" rel="noopener noreferrer" href="https://vt.tiktok.com/ZSgNR9oJm/">Voir la vidéo 05 sur TikTok</a></section></blockquote>
+          <div class="tiktok-card-heading"><span>PRESTATION 05</span><a href="https://vt.tiktok.com/ZSgNR9oJm/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
         </article>
-        <article class="showreel-slide">
-          <a href="https://prince-yakine.github.io/1792017852930~2.jpg" target="_blank" rel="noopener noreferrer" class="showreel-image-link">
-            <img src="1792017852930~2.jpg" alt="Photo de prestation — coulisses" loading="lazy">
-          </a>
-          <p>Photo de prestation — coulisses</p>
+        <article class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRmjyQ/" data-video-id="" style="max-width:605px;min-width:0;width:100%;margin:0 auto;"><section><a target="_blank" rel="noopener noreferrer" href="https://vt.tiktok.com/ZSgNRmjyQ/">Voir la vidéo 06 sur TikTok</a></section></blockquote>
+          <div class="tiktok-card-heading"><span>PRESTATION 06</span><a href="https://vt.tiktok.com/ZSgNRmjyQ/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
         </article>
-        <article class="showreel-slide showreel-video">
-          <a class="showreel-video-link" href="https://vt.tiktok.com/ZSgNRNvQJ/" target="_blank" rel="noopener noreferrer"><span class="showreel-play">▶</span><strong>Vidéo de prestation 1</strong><span>Lire sur TikTok ↗</span></a>
+        <article class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRsC8T/" data-video-id="" style="max-width:605px;min-width:0;width:100%;margin:0 auto;"><section><a target="_blank" rel="noopener noreferrer" href="https://vt.tiktok.com/ZSgNRsC8T/">Voir la vidéo 07 sur TikTok</a></section></blockquote>
+          <div class="tiktok-card-heading"><span>PRESTATION 07</span><a href="https://vt.tiktok.com/ZSgNRsC8T/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
         </article>
-        <article class="showreel-slide showreel-video">
-          <a class="showreel-video-link" href="https://vt.tiktok.com/ZSgNR2D39/" target="_blank" rel="noopener noreferrer"><span class="showreel-play">▶</span><strong>Vidéo de prestation 2</strong><span>Lire sur TikTok ↗</span></a>
+        <article class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRsnfC/" data-video-id="" style="max-width:605px;min-width:0;width:100%;margin:0 auto;"><section><a target="_blank" rel="noopener noreferrer" href="https://vt.tiktok.com/ZSgNRsnfC/">Voir la vidéo 08 sur TikTok</a></section></blockquote>
+          <div class="tiktok-card-heading"><span>PRESTATION 08</span><a href="https://vt.tiktok.com/ZSgNRsnfC/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
         </article>
-        </div>
-        <div class="showreel-controls"><button type="button" class="showreel-control" aria-label="Précédent" onclick="document.getElementById('showreel-carousel').scrollBy({left:-320,behavior:'smooth'})">←</button><span>Fais défiler pour découvrir mes prestations</span><button type="button" class="showreel-control" aria-label="Suivant" onclick="document.getElementById('showreel-carousel').scrollBy({left:320,behavior:'smooth'})">→</button></div>
+        <article class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNR9GhS/" data-video-id="" style="max-width:605px;min-width:0;width:100%;margin:0 auto;"><section><a target="_blank" rel="noopener noreferrer" href="https://vt.tiktok.com/ZSgNR9GhS/">Voir la vidéo 09 sur TikTok</a></section></blockquote>
+          <div class="tiktok-card-heading"><span>PRESTATION 09</span><a href="https://vt.tiktok.com/ZSgNR9GhS/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
+        </article>
       </div>
       <div class="performance-categories" aria-label="Types de prestations">
         <article class="performance-category"><span>01</span><div><h3>Humour &amp; stand-up</h3><p>Sketches, scène et humour engagé.</p></div><b aria-hidden="true">↗</b></article>
