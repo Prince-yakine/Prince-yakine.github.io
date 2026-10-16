@@ -150,6 +150,23 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
 }
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body,body:before{animation:none}.ticker-track{animation:none}.social-card{opacity:1;transform:none;animation:none!important}h1 .name-letter{animation:none;opacity:1;transform:none;filter:none}.reveal{opacity:1;transform:none;transition:none}.card,.btn,.profile-card,.portrait-photo,.hero-grid>div:first-child{animation:none;transition:none;filter:none;opacity:1;transform:none}}
+
+/* Intro inspirée de l'animation de référence : ciel étoilé, nom lumineux et rôles en machine à écrire */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,rgba(20,44,39,.28),transparent 56%),linear-gradient(145deg,#101114 0%,#17191b 52%,#0b0c10 100%)}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(1.5px 1.5px at 8% 18%,#ffffffb8 50%,transparent 100%),radial-gradient(1px 1px at 22% 72%,#ffffff9c 50%,transparent 100%),radial-gradient(2px 2px at 38% 28%,#ffffff8c 50%,transparent 100%),radial-gradient(1px 1px at 53% 83%,#ffffffa8 50%,transparent 100%),radial-gradient(1.5px 1.5px at 69% 17%,#ffffffad 50%,transparent 100%),radial-gradient(1px 1px at 81% 61%,#ffffffa0 50%,transparent 100%),radial-gradient(2px 2px at 93% 32%,#ffffff9c 50%,transparent 100%),radial-gradient(1px 1px at 91% 88%,#ffffff9c 50%,transparent 100%);background-size:360px 260px;animation:star-drift 28s linear infinite;opacity:.68}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 15%,rgba(4,5,8,.42) 100%);animation:star-glow 5s ease-in-out infinite alternate}
+@keyframes star-drift{from{background-position:0 0}to{background-position:180px 260px}}
+@keyframes star-glow{from{opacity:.55}to{opacity:1}}
+.hero h1 .name-line.first,.hero h1 .name-line.first .name-letter,.hero h1 .name-line.last{color:transparent!important;background:linear-gradient(100deg,#4dd9d0 0%,#57df9b 48%,#8bea16 100%);-webkit-background-clip:text;background-clip:text;text-shadow:0 0 28px rgba(65,221,157,.12)}
+.hero h1 .name-letter{animation-duration:.55s;animation-timing-function:cubic-bezier(.16,.8,.2,1);filter:blur(4px)}
+.role-line{display:flex;align-items:center;gap:9px;min-height:2.1em;margin:0 0 14px;color:#e7e8e9;font-size:clamp(1.05rem,2.2vw,1.35rem);font-weight:450}
+.role-line:before{content:"";width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:#66e58c;box-shadow:0 0 12px #66e58c}
+#typed-role{color:#bfc4c9}
+.typing-caret{display:inline-block;width:2px;height:1.1em;margin-left:3px;background:#67e6a0;vertical-align:-.15em;animation:caret-blink .8s steps(2,start) infinite}
+@keyframes caret-blink{to{visibility:hidden}}
+@media(max-width:850px){.hero:before{background-size:280px 220px}.hero-grid{gap:34px}}
+@media(prefers-reduced-motion:reduce){.hero:before,.hero:after{animation:none}.typing-caret{animation:none}}
+
 </style>
 </head>
 <body>
@@ -174,7 +191,7 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
       <div>
         <div class="eyebrow">Créativité avec Impact</div>
         <h1 aria-label="Rauch Yakine TCHONTCHOKO"><span class="name-line first" style="--line-delay:0.2s"><span class="name-letter" style="--i:0">R</span><span class="name-letter" style="--i:1">a</span><span class="name-letter" style="--i:2">u</span><span class="name-letter" style="--i:3">c</span><span class="name-letter" style="--i:4">h</span><span class="name-letter" style="--i:5">&nbsp;</span><span class="name-letter" style="--i:6">Y</span><span class="name-letter" style="--i:7">a</span><span class="name-letter" style="--i:8">k</span><span class="name-letter" style="--i:9">i</span><span class="name-letter" style="--i:10">n</span><span class="name-letter" style="--i:11">e</span></span><span class="name-line last" style="--line-delay:1.35s"><span class="name-letter" style="--i:0">T</span><span class="name-letter" style="--i:1">C</span><span class="name-letter" style="--i:2">H</span><span class="name-letter" style="--i:3">O</span><span class="name-letter" style="--i:4">N</span><span class="name-letter" style="--i:5">T</span><span class="name-letter" style="--i:6">C</span><span class="name-letter" style="--i:7">H</span><span class="name-letter" style="--i:8">O</span><span class="name-letter" style="--i:9">K</span><span class="name-letter" style="--i:10">O</span></span></h1>
-        <p class="lead">Chargé de communication · Créateur de contenu · Scénariste · Humoriste · Gestion de projet · Athlète · Scout · Développeur web</p>
+        <p class="role-line" aria-label="Mes métiers et domaines"><span id="typed-role" aria-live="polite">Chargé de communication</span><span class="typing-caret" aria-hidden="true"></span></p><p class="lead">Communication · Humour &amp; cinéma · Audiovisuel · Création numérique · Entrepreneuriat culturel</p>
         <p class="intro">Je transforme les idées en histoires, les histoires en projets et les projets en solutions concrètes. À la croisée de la communication, de l’art, de l’audiovisuel et du numérique, je conçois des initiatives créatives à impact culturel et social.</p>
         <div class="actions"><a class="btn btn-primary" href="#projets">Découvrir mes projets ↗</a><a class="btn btn-secondary" href="#contact">Collaborons ensemble</a></div>
       </div>
@@ -416,5 +433,48 @@ document.getElementById("printCv").addEventListener("click", () => window.print(
 <style>
 @media print{body{background:#fff;color:#111}header,.ticker,#to-top,.actions,.contact-links,footer{display:none!important}section{padding:24px 0;border-color:#ddd;break-inside:avoid}.container{width:100%}.card,.skill-group,.profile-card,.cv-panel,.contact-box{background:#fff;color:#111;border:1px solid #ccc;box-shadow:none}.card p,.section-intro,.intro,.timeline-item p,.cv-panel p,.contact-note{color:#333}.hero{min-height:0;padding:25px 0}.hero-grid{display:block}h1{font-size:34px}.reveal{opacity:1;transform:none}a{color:#111;text-decoration:none}}
 </style>
+
+<script>
+(() => {
+  const target = document.getElementById('typed-role');
+  if (!target) return;
+  const roles = [
+    'Chargé de communication',
+    'Humoriste & stand-upper',
+    'Acteur et scénariste',
+    'Créateur de contenu',
+    'Photographe & vidéaste',
+    'Développeur web et mobile',
+    'Designer UI/UX',
+    'Entrepreneur culturel',
+    'Chef de projet',
+    'Chercheur en sciences du langage',
+    'Athlète et entraîneur de handball',
+    'Engagé pour les ODD'
+  ];
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    target.textContent = roles.join(' · ');
+    return;
+  }
+  let index = 0, char = roles[0].length, deleting = true;
+  const tick = () => {
+    const phrase = roles[index];
+    if (deleting) {
+      char--;
+      target.textContent = phrase.slice(0, Math.max(0, char));
+      if (char <= 0) { deleting = false; index = (index + 1) % roles.length; setTimeout(tick, 320); return; }
+      setTimeout(tick, 38);
+    } else {
+      const next = roles[index];
+      char++;
+      target.textContent = next.slice(0, char);
+      if (char >= next.length) { deleting = true; setTimeout(tick, 1550); return; }
+      setTimeout(tick, 72);
+    }
+  };
+  setTimeout(() => { deleting = true; tick(); }, 1800);
+})();
+</script>
+
 </body>
 </html>
