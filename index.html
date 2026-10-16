@@ -268,6 +268,18 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
 .tech-emoji{font-size:1.8rem;line-height:1;color:var(--gold)}
 @media(max-width:600px){.tech-icon-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.tech-icon{height:62px}.tech-icon img{width:28px;height:28px}}
 </style>
+<style>
+/* Alignement et libellés des compétences */
+#competences .skill-group h3{font-size:1.12rem;line-height:1.35}
+#competences .skill-group h4{margin-top:22px}
+#competences .tech-icon-grid{grid-template-columns:repeat(auto-fill,minmax(76px,1fr));}
+#competences .tech-icon{position:relative;min-height:76px}
+#competences .tech-icon img{width:34px;height:34px}
+#competences .tech-emoji{font-size:1.05rem;font-weight:900;letter-spacing:.3px}
+#competences .skill-group:not(.tech-skill-group){min-width:0}
+#competences .skill-tags span{overflow-wrap:anywhere}
+@media(max-width:600px){#competences .tech-icon-grid{grid-template-columns:repeat(4,minmax(0,1fr))}#competences .tech-icon{min-height:64px}}
+</style>
 </head>
 <body>
 <header>
@@ -352,58 +364,43 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
       <p class="section-kicker">Savoir-faire</p><h2>Mes <span class="gold">compétences</span></h2>
       <p class="section-intro">Un profil transversal qui associe technologies numériques, création artistique, communication, gestion de projets et ouverture culturelle.</p>
       <div class="skills">
-        <div class="skill-group tech-skill-group"><h3>01. Compétences techniques &amp; numériques</h3>
-          <p class="tech-icon-note">Les technologies et outils que j’utilise, présentés par leurs icônes. Survole ou touche une icône pour afficher son nom.</p>
+        <div class="skill-group tech-skill-group"><h3>Compétences techniques &amp; numériques</h3>
+          <p class="tech-icon-note">Icônes des langages, logiciels et environnements numériques indiqués dans mon profil. Chaque icône affiche son nom au toucher ou au survol.</p>
           <h4>Développement web &amp; mobile</h4>
           <div class="tech-icon-grid" aria-label="Technologies web et mobile">
             <span class="tech-icon" title="HTML5" aria-label="HTML5"><img src="https://cdn.simpleicons.org/html5" alt="HTML5"></span>
             <span class="tech-icon" title="CSS3" aria-label="CSS3"><img src="https://cdn.simpleicons.org/css3" alt="CSS3"></span>
-            <span class="tech-icon" title="Bootstrap" aria-label="Bootstrap"><img src="https://cdn.simpleicons.org/bootstrap" alt="Bootstrap"></span>
-            <span class="tech-icon" title="Tailwind CSS" aria-label="Tailwind CSS"><img src="https://cdn.simpleicons.org/tailwindcss" alt="Tailwind CSS"></span>
             <span class="tech-icon" title="JavaScript" aria-label="JavaScript"><img src="https://cdn.simpleicons.org/javascript" alt="JavaScript"></span>
-            <span class="tech-icon" title="PHP" aria-label="PHP"><img src="https://cdn.simpleicons.org/php" alt="PHP"></span>
-            <span class="tech-icon" title="Laravel" aria-label="Laravel"><img src="https://cdn.simpleicons.org/laravel" alt="Laravel"></span>
-            <span class="tech-icon" title="Python" aria-label="Python"><img src="https://cdn.simpleicons.org/python" alt="Python"></span>
-            <span class="tech-icon" title="MySQL" aria-label="MySQL"><img src="https://cdn.simpleicons.org/mysql" alt="MySQL"></span>
-            <span class="tech-icon" title="React" aria-label="React"><img src="https://cdn.simpleicons.org/react" alt="React"></span>
-            <span class="tech-icon" title="Flutter" aria-label="Flutter"><img src="https://cdn.simpleicons.org/flutter" alt="Flutter"></span>
           </div>
           <h4>Outils &amp; environnements</h4>
           <div class="tech-icon-grid" aria-label="Outils et environnements numériques">
             <span class="tech-icon" title="Git" aria-label="Git"><img src="https://cdn.simpleicons.org/git" alt="Git"></span>
             <span class="tech-icon" title="GitHub" aria-label="GitHub"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub"></span>
-            <span class="tech-icon" title="Microsoft Azure" aria-label="Microsoft Azure"><img src="https://cdn.simpleicons.org/microsoftazure" alt="Microsoft Azure"></span>
-            <span class="tech-icon" title="Google Cloud" aria-label="Google Cloud"><img src="https://cdn.simpleicons.org/googlecloud" alt="Google Cloud"></span>
             <span class="tech-icon" title="Linux" aria-label="Linux"><img src="https://cdn.simpleicons.org/linux" alt="Linux"></span>
-            <span class="tech-icon" title="Windows" aria-label="Windows"><img src="https://cdn.simpleicons.org/windows11" alt="Windows"></span>
             <span class="tech-icon" title="Visual Studio Code" aria-label="Visual Studio Code"><img src="https://cdn.simpleicons.org/visualstudiocode" alt="Visual Studio Code"></span>
             <span class="tech-icon" title="Microsoft Word" aria-label="Microsoft Word"><img src="https://cdn.simpleicons.org/microsoftword" alt="Microsoft Word"></span>
-            <span class="tech-icon" title="Microsoft Excel" aria-label="Microsoft Excel"><img src="https://cdn.simpleicons.org/microsoftexcel" alt="Microsoft Excel"></span>
-            <span class="tech-icon" title="Microsoft PowerPoint" aria-label="Microsoft PowerPoint"><img src="https://cdn.simpleicons.org/microsoftpowerpoint" alt="Microsoft PowerPoint"></span>
           </div>
           <h4>Design, audiovisuel &amp; outils numériques</h4>
           <div class="tech-icon-grid" aria-label="Design et création numérique">
             <span class="tech-icon" title="Figma / UI-UX" aria-label="Figma / UI-UX"><img src="https://cdn.simpleicons.org/figma" alt="Figma / UI-UX"></span>
             <span class="tech-icon" title="Canva" aria-label="Canva"><img src="https://cdn.simpleicons.org/canva" alt="Canva"></span>
             <span class="tech-icon" title="Adobe Photoshop" aria-label="Adobe Photoshop"><img src="https://cdn.simpleicons.org/adobephotoshop" alt="Adobe Photoshop"></span>
-            <span class="tech-icon" title="Adobe Premiere Pro" aria-label="Adobe Premiere Pro"><img src="https://cdn.simpleicons.org/adobepremierepro" alt="Adobe Premiere Pro"></span>
-            <span class="tech-icon" title="CapCut" aria-label="CapCut"><img src="https://cdn.simpleicons.org/capcut/ffffff" alt="CapCut"></span>
-            <span class="tech-icon" title="Intelligence artificielle" aria-label="Intelligence artificielle"><span class="tech-emoji">✳</span></span>
-            <span class="tech-icon" title="Support informatique" aria-label="Support informatique"><span class="tech-emoji">⌘</span></span>
-            <span class="tech-icon" title="Collecte de données" aria-label="Collecte de données"><span class="tech-emoji">▤</span></span>
-            <span class="tech-icon" title="Création de contenus pour les réseaux sociaux" aria-label="Création de contenus pour les réseaux sociaux"><span class="tech-emoji">◎</span></span>
+            <span class="tech-icon" title="Intelligence artificielle" aria-label="Intelligence artificielle"><span class="tech-emoji">AI</span></span>
+            <span class="tech-icon" title="Support informatique" aria-label="Support informatique"><span class="tech-emoji">IT</span></span>
+            <span class="tech-icon" title="Collecte de données" aria-label="Collecte de données"><span class="tech-emoji">DATA</span></span>
+            <span class="tech-icon" title="Création de contenus pour les réseaux sociaux" aria-label="Création de contenus pour les réseaux sociaux"><span class="tech-emoji">SM</span></span>
           </div>
         </div>
-        <div class="skill-group"><h3>02. Compétences créatives &amp; artistiques</h3>
+        <div class="skill-group"><h3>Compétences créatives &amp; artistiques</h3>
           <h4>Écriture &amp; scène</h4><div class="skill-tags"><span>Écriture de scénarios</span><span>Scénarisation (certificat)</span><span>Dramaturgie</span><span>Écriture de sketchs</span><span>Stand-up</span><span>Théâtre</span><span>Jeu d’acteur</span><span>Animation radio et plateaux</span><span>Prise de parole en public</span><span>Performance artistique</span></div>
           <h4>Production visuelle &amp; événementielle</h4><div class="skill-tags"><span>Photographie numérique</span><span>Cadrage</span><span>Réalisation audiovisuelle</span><span>Création audiovisuelle</span><span>Direction artistique</span><span>Régie d’événements</span><span>Décoration de salles</span><span>Scénographie d’exposition</span></div>
         </div>
-        <div class="skill-group"><h3>03. Management, stratégie &amp; entrepreneuriat</h3>
+        <div class="skill-group"><h3>Management, stratégie &amp; entrepreneuriat</h3>
           <h4>Gestion &amp; leadership</h4><div class="skill-tags"><span>Notions de gestion de projet</span><span>Pilotage de projets entrepreneuriaux</span><span>Entrepreneuriat culturel</span><span>Président — Compagnie Arts Sauveurs</span><span>Secrétaire — Kara Stand Up Club</span><span>Organisation d’événements culturels</span><span>Fier des ODD</span><span>RIAK</span><span>Management</span><span>Recherche de fonds</span></div>
           <h4>Communication &amp; marketing</h4><div class="skill-tags"><span>Marketing digital</span><span>Communication d’entreprise</span><span>Relations publiques</span><span>Stratégie de communication</span><span>Stratégie marketing</span><span>Communication digitale</span><span>Stratégie de contenu</span><span>Storytelling</span><span>Community management</span><span>Rédaction</span><span>Création de contenus</span></div>
         </div>
-        <div class="skill-group"><h3>04. Qualités humaines &amp; relationnelles</h3><div class="skill-tags"><span>Intelligence émotionnelle</span><span>Aisance oratoire</span><span>Captation du public</span><span>Pitch d’impact</span><span>Leadership</span><span>Esprit d’initiative</span><span>Travail en équipe</span><span>Adaptabilité</span><span>Curiosité</span><span>Apprentissage rapide</span><span>Résolution de problèmes</span><span>Collecte de données</span><span>Animation communautaire</span><span>Travail collaboratif</span><span>Engagement citoyen</span></div></div>
-        <div class="skill-group"><h3>05. Compétences linguistiques</h3><div class="skill-tags"><span>Français — langue maternelle / bilingue</span><span>Anglais — niveau intermédiaire</span><span>Langue des signes — courant</span><span>Italien — débutant</span><span>Espagnol — débutant</span><span>Langues locales du Togo — 3+ langues</span><span>Description et comparaison des langues</span></div><p class="skill-note">Les niveaux linguistiques sont présentés selon les indications communiquées.</p></div>
+        <div class="skill-group"><h3>Qualités humaines &amp; relationnelles</h3><div class="skill-tags"><span>Intelligence émotionnelle</span><span>Aisance oratoire</span><span>Captation du public</span><span>Pitch d’impact</span><span>Leadership</span><span>Esprit d’initiative</span><span>Travail en équipe</span><span>Adaptabilité</span><span>Curiosité</span><span>Apprentissage rapide</span><span>Résolution de problèmes</span><span>Collecte de données</span><span>Animation communautaire</span><span>Travail collaboratif</span><span>Engagement citoyen</span></div></div>
+        <div class="skill-group"><h3>Compétences linguistiques</h3><div class="skill-tags"><span>Français — langue maternelle / bilingue</span><span>Anglais — niveau intermédiaire</span><span>Langue des signes — courant</span><span>Italien — débutant</span><span>Espagnol — débutant</span><span>Langues locales du Togo — 3+ langues</span><span>Description et comparaison des langues</span></div><p class="skill-note">Les niveaux linguistiques sont présentés selon les indications communiquées.</p></div>
       </div>
     </div>
   </section>
