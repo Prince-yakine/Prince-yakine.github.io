@@ -292,6 +292,15 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
   background-image:linear-gradient(180deg,rgba(8,9,14,.12) 0%,rgba(8,9,14,.38) 35%,rgba(8,9,14,.97) 100%),url('https://images.unsplash.com/photo-1455390582262-044c4300fe32?auto=format&fit=crop&w=1000&q=85');
 }
 #competences .skill-carousel-card summary{background:linear-gradient(180deg,rgba(10,11,16,.12),rgba(10,11,16,.12));}
+/* Renfort de la couverture linguistique : image appliquée directement au panneau visible */
+#competences .skill-carousel-card.cover-language{
+  background-image:linear-gradient(180deg,rgba(8,9,14,.12) 0%,rgba(8,9,14,.42) 38%,rgba(8,9,14,.97) 100%),url('https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1000&q=85') !important;
+  background-size:cover !important;
+  background-position:center !important;
+}
+#competences .skill-carousel-card.cover-language:before{
+  background-image:linear-gradient(180deg,rgba(8,9,14,.08),rgba(8,9,14,.24)) !important;
+}
 @media(max-width:600px){
  #competences .skill-carousel-card.cover-art:before,
  #competences .skill-carousel-card.cover-management:before,
