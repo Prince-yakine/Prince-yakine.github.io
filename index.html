@@ -119,6 +119,21 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;letter-spacing:-.045em;ma
 @media(prefers-reduced-motion:reduce){.logo-marquee-track{animation:none}.programme-logo{transition:none}}
 
 
+
+/* Galerie TikTok responsive */
+.tiktok-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:30px;align-items:start}
+.tiktok-card{min-width:0;overflow:hidden;border:1px solid rgba(248,185,35,.22);border-radius:18px;padding:12px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));box-shadow:0 16px 34px rgba(0,0,0,.18);transition:transform .25s,border-color .25s}
+.tiktok-card:hover{transform:translateY(-4px);border-color:rgba(248,185,35,.65)}
+.tiktok-card-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:3px 3px 10px}
+.tiktok-card-heading span{font-size:.68rem;font-weight:900;letter-spacing:1.5px;color:var(--gold)}
+.tiktok-card-heading a{font-size:.72rem;color:var(--muted);text-decoration:none}
+.tiktok-card-heading a:hover{color:var(--gold)}
+.tiktok-card .tiktok-embed{margin:0!important;width:100%!important;min-width:0!important}
+.tiktok-card blockquote section{padding:18px 8px;color:var(--muted);font-size:.9rem}
+.performance-screen-intro{min-height:260px}
+@media(max-width:850px){.tiktok-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
+@media(max-width:520px){.tiktok-gallery{grid-template-columns:1fr;gap:16px}.tiktok-card{max-width:420px;width:100%;margin-inline:auto}.performance-screen-intro{min-height:210px}}
+
 /* Galerie cinématique des prestations */
 .performances-section{position:relative;overflow:hidden;background:radial-gradient(ellipse at 85% 25%,rgba(248,185,35,.075),transparent 36%),linear-gradient(180deg,rgba(255,255,255,.012),transparent)}
 .performance-feature{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(240px,.7fr);gap:26px;align-items:center;margin-top:34px}
@@ -283,20 +298,75 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
       <h2>Mes <span class="gold">prestations</span></h2>
       <p class="section-intro">Stand-up, jeu d’acteur, tournages et événements : découvre mon univers à travers des extraits de mes prestations et des moments captés sur le terrain.</p>
       <div class="performance-feature">
-        <div class="performance-screen">
+        <div class="performance-caption">
+          <span class="performance-index">GALERIE VIDÉO · TIKTOK</span>
+          <h3>Mes créations, en mouvement</h3>
+          <p>Retrouve ici neuf vidéos de mes réalisations. Appuie sur une vidéo pour la lire ; tu peux aussi l’ouvrir directement sur TikTok.</p>
+        </div>
+        <div class="performance-screen performance-screen-intro" aria-hidden="true">
           <div class="performance-screen-glow"></div>
           <div class="performance-placeholder">
-            <span class="performance-play" aria-hidden="true">▶</span>
-            <span class="performance-label">Coulisses · Scène · Audiovisuel</span>
-            <p>Les images de mes prestations arrivent ici</p>
-            <small>La vidéo reçue sera intégrée dès que son fichier sera hébergé avec le site.</small>
+            <span class="performance-play">▶</span>
+            <span class="performance-label">Scène · Humour · Audiovisuel</span>
+            <p>Mon univers créatif</p>
           </div>
         </div>
-        <div class="performance-caption">
-          <span class="performance-index">01 / EN COULISSES</span>
-          <h3>Des histoires qui prennent vie</h3>
-          <p>De l’énergie de la scène à la précision du travail audiovisuel, chaque expérience raconte une partie de mon parcours créatif.</p>
-        </div>
+      </div>
+      <div class="tiktok-gallery" aria-label="Vidéos de mes prestations">
+        <article class="tiktok-card">
+          <div class="tiktok-card-heading"><span>VIDÉO 01</span><a href="https://vt.tiktok.com/ZSgNRNvQJ/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRNvQJ/" data-video-id="" style="max-width:605px;min-width:0;">
+            <section><a href="https://vt.tiktok.com/ZSgNRNvQJ/" target="_blank" rel="noopener noreferrer">Voir la vidéo 1 sur TikTok</a></section>
+          </blockquote>
+        </article>
+        <article class="tiktok-card">
+          <div class="tiktok-card-heading"><span>VIDÉO 02</span><a href="https://vt.tiktok.com/ZSgNR2D39/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNR2D39/" data-video-id="" style="max-width:605px;min-width:0;">
+            <section><a href="https://vt.tiktok.com/ZSgNR2D39/" target="_blank" rel="noopener noreferrer">Voir la vidéo 2 sur TikTok</a></section>
+          </blockquote>
+        </article>
+        <article class="tiktok-card">
+          <div class="tiktok-card-heading"><span>VIDÉO 03</span><a href="https://vt.tiktok.com/ZSgNRVdET/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRVdET/" data-video-id="" style="max-width:605px;min-width:0;">
+            <section><a href="https://vt.tiktok.com/ZSgNRVdET/" target="_blank" rel="noopener noreferrer">Voir la vidéo 3 sur TikTok</a></section>
+          </blockquote>
+        </article>
+        <article class="tiktok-card">
+          <div class="tiktok-card-heading"><span>VIDÉO 04</span><a href="https://vt.tiktok.com/ZSgNRPBGg/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRPBGg/" data-video-id="" style="max-width:605px;min-width:0;">
+            <section><a href="https://vt.tiktok.com/ZSgNRPBGg/" target="_blank" rel="noopener noreferrer">Voir la vidéo 4 sur TikTok</a></section>
+          </blockquote>
+        </article>
+        <article class="tiktok-card">
+          <div class="tiktok-card-heading"><span>VIDÉO 05</span><a href="https://vt.tiktok.com/ZSgNR9oJm/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNR9oJm/" data-video-id="" style="max-width:605px;min-width:0;">
+            <section><a href="https://vt.tiktok.com/ZSgNR9oJm/" target="_blank" rel="noopener noreferrer">Voir la vidéo 5 sur TikTok</a></section>
+          </blockquote>
+        </article>
+        <article class="tiktok-card">
+          <div class="tiktok-card-heading"><span>VIDÉO 06</span><a href="https://vt.tiktok.com/ZSgNRmjyQ/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRmjyQ/" data-video-id="" style="max-width:605px;min-width:0;">
+            <section><a href="https://vt.tiktok.com/ZSgNRmjyQ/" target="_blank" rel="noopener noreferrer">Voir la vidéo 6 sur TikTok</a></section>
+          </blockquote>
+        </article>
+        <article class="tiktok-card">
+          <div class="tiktok-card-heading"><span>VIDÉO 07</span><a href="https://vt.tiktok.com/ZSgNRsC8T/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRsC8T/" data-video-id="" style="max-width:605px;min-width:0;">
+            <section><a href="https://vt.tiktok.com/ZSgNRsC8T/" target="_blank" rel="noopener noreferrer">Voir la vidéo 7 sur TikTok</a></section>
+          </blockquote>
+        </article>
+        <article class="tiktok-card">
+          <div class="tiktok-card-heading"><span>VIDÉO 08</span><a href="https://vt.tiktok.com/ZSgNRsnfC/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNRsnfC/" data-video-id="" style="max-width:605px;min-width:0;">
+            <section><a href="https://vt.tiktok.com/ZSgNRsnfC/" target="_blank" rel="noopener noreferrer">Voir la vidéo 8 sur TikTok</a></section>
+          </blockquote>
+        </article>
+        <article class="tiktok-card">
+          <div class="tiktok-card-heading"><span>VIDÉO 09</span><a href="https://vt.tiktok.com/ZSgNR9GhS/" target="_blank" rel="noopener noreferrer">Ouvrir sur TikTok ↗</a></div>
+          <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgNR9GhS/" data-video-id="" style="max-width:605px;min-width:0;">
+            <section><a href="https://vt.tiktok.com/ZSgNR9GhS/" target="_blank" rel="noopener noreferrer">Voir la vidéo 9 sur TikTok</a></section>
+          </blockquote>
+        </article>
       </div>
       <div class="performance-categories" aria-label="Types de prestations">
         <article class="performance-category"><span>01</span><div><h3>Humour &amp; stand-up</h3><p>Sketches, scène et humour engagé.</p></div><b aria-hidden="true">↗</b></article>
@@ -562,5 +632,7 @@ document.getElementById("printCv").addEventListener("click", () => window.print(
 })();
 </script>
 
+
+<script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
