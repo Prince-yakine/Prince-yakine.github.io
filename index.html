@@ -118,6 +118,33 @@ h2{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;letter-spacing:-.045em;ma
 @media(max-width:600px){.programmes-section{padding:42px 0}.programme-logo{width:178px;height:105px;padding:10px 13px}.logo-marquee-track,.logo-marquee-group{gap:12px}.logo-marquee-group{padding-right:12px}}
 @media(prefers-reduced-motion:reduce){.logo-marquee-track{animation:none}.programme-logo{transition:none}}
 
+
+/* Galerie cinématique des prestations */
+.performances-section{position:relative;overflow:hidden;background:radial-gradient(ellipse at 85% 25%,rgba(248,185,35,.075),transparent 36%),linear-gradient(180deg,rgba(255,255,255,.012),transparent)}
+.performance-feature{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(240px,.7fr);gap:26px;align-items:center;margin-top:34px}
+.performance-screen{position:relative;min-height:320px;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(248,185,35,.4);border-radius:22px;background:radial-gradient(ellipse at 50% 120%,rgba(248,185,35,.18),transparent 55%),linear-gradient(135deg,#191c26,#08090d 70%);box-shadow:0 24px 65px #0007,0 0 28px rgba(248,185,35,.08);isolation:isolate}
+.performance-screen:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.08) 48%,transparent 56%);transform:translateX(-100%);animation:performance-sweep 7s ease-in-out infinite}
+.performance-screen-glow{position:absolute;inset:12%;border:1px solid rgba(248,185,35,.12);border-radius:50%;filter:blur(1px);animation:performance-pulse 4s ease-in-out infinite}
+.performance-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:10px}
+.performance-play{display:grid;place-items:center;width:62px;height:62px;border:1px solid var(--gold);border-radius:50%;padding-left:4px;color:var(--gold);font-size:1.25rem;box-shadow:0 0 0 8px rgba(248,185,35,.06),0 0 30px rgba(248,185,35,.2)}
+.performance-label,.performance-index{font-size:.68rem;letter-spacing:2px;font-weight:850;color:var(--gold);text-transform:uppercase}
+.performance-placeholder p{font-size:clamp(1.05rem,2vw,1.35rem);font-weight:800}
+.performance-placeholder small{max-width:350px;color:var(--muted);font-size:.78rem}
+.performance-caption{padding:16px 0}
+.performance-caption h3{font-size:clamp(1.5rem,3vw,2.15rem);line-height:1.15;margin:14px 0}
+.performance-caption p{color:var(--muted);font-size:.95rem}
+.performance-categories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+.performance-category{display:flex;align-items:center;gap:13px;padding:18px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(140deg,#171a23,#101218);transition:transform .25s,border-color .25s}
+.performance-category:hover{transform:translateY(-4px);border-color:rgba(248,185,35,.6)}
+.performance-category>span{font-size:.72rem;font-weight:900;color:var(--gold);align-self:flex-start}
+.performance-category h3{font-size:.94rem;margin-bottom:3px}
+.performance-category p{font-size:.78rem;color:var(--muted);line-height:1.5}
+.performance-category>b{margin-left:auto;color:var(--gold);font-size:1.05rem}
+@keyframes performance-sweep{0%,12%{transform:translateX(-100%);opacity:0}28%{opacity:1}65%,100%{transform:translateX(100%);opacity:0}}
+@keyframes performance-pulse{0%,100%{transform:scale(.94);opacity:.35}50%{transform:scale(1.06);opacity:.8}}
+@media(max-width:700px){.performance-feature{grid-template-columns:1fr;gap:10px}.performance-screen{min-height:220px;border-radius:17px}.performance-caption{padding:12px 0}.performance-categories{grid-template-columns:1fr;gap:10px}.performance-category{padding:15px}}
+@media(prefers-reduced-motion:reduce){.performance-screen:before,.performance-screen-glow{animation:none}}
+
 footer{padding:28px 0;color:var(--muted);font-size:.84rem}
 .footer-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 #to-top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;display:grid;place-items:center;background:var(--gold);color:#111;border-radius:50%;text-decoration:none;font-size:1.3rem;font-weight:900;box-shadow:0 8px 30px #0005;opacity:0;pointer-events:none;transform:translateY(8px);transition:.2s;z-index:20}
@@ -200,7 +227,7 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
     <a class="logo" href="#accueil" aria-label="Retour à l'accueil"><img class="logo-photo" src="portrait.webp" alt="" width="34" height="34"><span>.</span></a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">☰ Menu</button>
     <nav id="mainNav" aria-label="Navigation principale">
-      <a href="#apropos">À propos</a><a href="#competences">Compétences</a><a href="#parcours">Parcours</a><a href="#projets">Projets</a><a href="#cv">CV</a><a href="#contact">Contact</a>
+      <a href="#apropos">À propos</a><a href="#prestations">Prestations</a><a href="#competences">Compétences</a><a href="#parcours">Parcours</a><a href="#projets">Projets</a><a href="#cv">CV</a><a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -247,6 +274,34 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
         <article class="card"><div class="card-icon">✦</div><h3>Communication &amp; stratégie</h3><p>Storytelling, création de contenus, présence digitale, animation de communautés et valorisation de projets.</p></article>
         <article class="card"><div class="card-icon">🎬</div><h3>Art &amp; audiovisuel</h3><p>Humour, écriture de sketches et de scénarios, jeu d’acteur, cinéma, photographie et organisation culturelle.</p></article>
         <article class="card"><div class="card-icon">⌘</div><h3>Innovation &amp; impact</h3><p>Développement web, conception numérique, entrepreneuriat social et initiatives liées aux Objectifs de développement durable.</p></article>
+      </div>
+    </div>
+  </section>
+  <section id="prestations" class="reveal performances-section">
+    <div class="container">
+      <p class="section-kicker">Sur scène &amp; en images</p>
+      <h2>Mes <span class="gold">prestations</span></h2>
+      <p class="section-intro">Stand-up, jeu d’acteur, tournages et événements : découvre mon univers à travers des extraits de mes prestations et des moments captés sur le terrain.</p>
+      <div class="performance-feature">
+        <div class="performance-screen">
+          <div class="performance-screen-glow"></div>
+          <div class="performance-placeholder">
+            <span class="performance-play" aria-hidden="true">▶</span>
+            <span class="performance-label">Coulisses · Scène · Audiovisuel</span>
+            <p>Les images de mes prestations arrivent ici</p>
+            <small>La vidéo reçue sera intégrée dès que son fichier sera hébergé avec le site.</small>
+          </div>
+        </div>
+        <div class="performance-caption">
+          <span class="performance-index">01 / EN COULISSES</span>
+          <h3>Des histoires qui prennent vie</h3>
+          <p>De l’énergie de la scène à la précision du travail audiovisuel, chaque expérience raconte une partie de mon parcours créatif.</p>
+        </div>
+      </div>
+      <div class="performance-categories" aria-label="Types de prestations">
+        <article class="performance-category"><span>01</span><div><h3>Humour &amp; stand-up</h3><p>Sketches, scène et humour engagé.</p></div><b aria-hidden="true">↗</b></article>
+        <article class="performance-category"><span>02</span><div><h3>Acteur &amp; cinéma</h3><p>Jeu, tournages et projets de fiction.</p></div><b aria-hidden="true">↗</b></article>
+        <article class="performance-category"><span>03</span><div><h3>Photo &amp; vidéo</h3><p>Images, événements et récits visuels.</p></div><b aria-hidden="true">↗</b></article>
       </div>
     </div>
   </section>
