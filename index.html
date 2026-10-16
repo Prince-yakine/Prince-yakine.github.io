@@ -181,13 +181,16 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
 @media(max-width:850px){.about-full .about-hero-grid{grid-template-columns:minmax(0,1fr) minmax(130px,.55fr);gap:18px}.about-full .about-photo{justify-self:end;max-width:230px}.about-full .about-stats .stats-grid{width:calc(100% - 20px)}}@media(max-width:520px){.about-full .about-hero-grid{grid-template-columns:1fr}.about-full .about-photo{justify-self:start;max-width:220px}.about-full .about-stats .stat-item{padding:8px 4px}.about-full .about-stats .stat-item span{font-size:.58rem}}
 
 
-/* Animation douce et permanente de la photo dans À propos */
-.about-full .about-photo .portrait-frame{overflow:hidden;position:relative;box-shadow:0 0 0 1px #ffc52f55,0 12px 35px #0006;animation:about-photo-float 5s ease-in-out infinite}
-.about-full .about-photo .portrait-frame:before{content:"";position:absolute;z-index:2;inset:-40% -70%;pointer-events:none;background:linear-gradient(110deg,transparent 42%,#ffffff18 50%,transparent 58%);transform:translateX(-70%);animation:about-photo-shine 6s ease-in-out infinite}
-.about-full .about-photo .portrait-photo{transform-origin:center;animation:about-photo-zoom 7s ease-in-out infinite}
-@keyframes about-photo-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-@keyframes about-photo-zoom{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
-@keyframes about-photo-shine{0%,55%,100%{transform:translateX(-70%)}75%{transform:translateX(70%)}}
+/* Animation cinématique spectaculaire de la photo À propos */
+.about-full .about-photo{perspective:1000px;filter:drop-shadow(0 20px 35px #0008)}
+.about-full .about-photo .portrait-frame{overflow:hidden;position:relative;border-radius:12px;isolation:isolate;transform-style:preserve-3d;border:1px solid #f3c94d88;box-shadow:0 0 0 1px #f3c94d22,0 0 24px #f3c94d22,0 24px 55px #0008;animation:portrait-cinematic-float 5s ease-in-out infinite,portrait-cinematic-glow 4s ease-in-out infinite}
+.about-full .about-photo .portrait-frame:before{content:"";position:absolute;z-index:3;inset:-70% -100%;pointer-events:none;background:linear-gradient(115deg,transparent 39%,#ffffff05 45%,#fff9 50%,#7cf7e9aa 52%,transparent 59%);transform:translateX(-100%) rotate(8deg);animation:portrait-cinematic-sweep 5.5s ease-in-out infinite}
+.about-full .about-photo .portrait-frame:after{content:"";position:absolute;z-index:2;inset:0;pointer-events:none;background:linear-gradient(180deg,#07131b00 55%,#06101899 100%),radial-gradient(ellipse at 50% 0%,#fff2,transparent 60%);mix-blend-mode:screen}
+.about-full .about-photo .portrait-photo{transform-origin:center;will-change:transform,filter;animation:portrait-cinematic-zoom 9s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes portrait-cinematic-float{0%,100%{transform:translateY(0) rotateX(0) rotateY(-1deg)}50%{transform:translateY(-10px) rotateX(1.4deg) rotateY(1deg)}}
+@keyframes portrait-cinematic-glow{0%,100%{box-shadow:0 0 0 1px #f3c94d22,0 0 16px #f3c94d22,0 24px 55px #0008}50%{box-shadow:0 0 0 1px #75f2e8aa,0 0 32px #75f2e855,0 24px 55px #0008}}
+@keyframes portrait-cinematic-sweep{0%,15%{transform:translateX(-100%) rotate(8deg);opacity:0}30%{opacity:1}65%,100%{transform:translateX(100%) rotate(8deg);opacity:0}}
+@keyframes portrait-cinematic-zoom{0%,100%{transform:scale(1)}50%{transform:scale(1.065)}}
 @media(prefers-reduced-motion:reduce){.about-full .about-photo .portrait-frame,.about-full .about-photo .portrait-photo,.about-full .about-photo .portrait-frame:before{animation:none}}
 </style>
 </head>
