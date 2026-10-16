@@ -548,6 +548,10 @@ document.getElementById("printCv").addEventListener("click", () => window.print(
 </script>
 <style>
 @media print{body{background:#fff;color:#111}header,.ticker,#to-top,.actions,.contact-links,footer{display:none!important}section{padding:24px 0;border-color:#ddd;break-inside:avoid}.container{width:100%}.card,.skill-group,.profile-card,.cv-panel,.contact-box{background:#fff;color:#111;border:1px solid #ccc;box-shadow:none}.card p,.section-intro,.intro,.timeline-item p,.cv-panel p,.contact-note{color:#333}.hero{min-height:0;padding:25px 0}.hero-grid{display:block}h1{font-size:34px}.reveal{opacity:1;transform:none}a{color:#111;text-decoration:none}}
+
+/* Rapproche la section À propos de l’introduction */
+#apropos{margin-top:-48px;position:relative}
+@media(max-width:850px){#apropos{margin-top:-36px}}
 </style>
 
 <script>
