@@ -632,7 +632,7 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
     </div>
   </section>
 </main>
-<footer><div class="container footer-row"><span>© <span id="year"></span> Rauch Yakine TCHONTCHOKO. Tous droits réservés.</span><span>Conçu avec intention, créativité et ambition.</span></div></footer>
+<footer class="portfolio-footer"><div class="container portfolio-footer-inner"><img class="footer-portrait" src="portrait.webp" alt="Portrait de Rauch Yakine TCHONTCHOKO" loading="lazy" decoding="async"><div class="footer-identity"><strong>Rauch Yakine TCHONTCHOKO</strong><a href="tel:+22891268640">☎ +228 91 26 86 40</a><span>© <span id="year"></span> Tous droits réservés.</span><small>Conçu avec intention, créativité et ambition.</small></div></div></footer>
 <a id="to-top" href="#accueil" aria-label="Retour en haut">↑</a>
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -746,6 +746,17 @@ document.getElementById("printCv").addEventListener("click", () => window.print(
 #apropos .section-kicker{display:block;position:relative;transform:none!important;line-height:1.5;margin-bottom:12px}
 #apropos h2{display:block;position:relative;transform:none!important;line-height:1.15;margin-top:0;margin-bottom:20px}
 @media(max-width:850px){#apropos{margin-top:-54px}}
+
+/* Footer compact jaune, assorti à l'identité visuelle du portfolio */
+footer.portfolio-footer{background:var(--gold,#f2c94c);color:#111;padding:10px 0;min-height:92px;display:flex;align-items:center}
+.portfolio-footer-inner{display:flex;align-items:center;justify-content:center;gap:16px}
+.footer-portrait{width:68px;height:68px;flex:0 0 68px;object-fit:cover;object-position:center;border-radius:50%;border:3px solid #111;box-shadow:0 2px 8px #0002}
+.footer-identity{display:flex;flex-direction:column;align-items:flex-start;gap:2px;line-height:1.25}
+.footer-identity strong{font-size:15px;font-weight:850}
+.footer-identity a{font-size:13px;font-weight:750;color:#111;text-decoration:none}
+.footer-identity span,.footer-identity small{font-size:11px}
+@media(max-width:480px){footer.portfolio-footer{padding:9px 0;min-height:88px}.portfolio-footer-inner{gap:10px}.footer-portrait{width:58px;height:58px;flex-basis:58px}.footer-identity strong{font-size:13px}.footer-identity a{font-size:12px}.footer-identity span,.footer-identity small{font-size:10px}}
+
 </style>
 
 <script>
