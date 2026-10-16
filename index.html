@@ -432,22 +432,21 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
       <p class="section-kicker">Sur scène &amp; en images</p>
       <h2>Mes <span class="gold">prestations</span></h2>
       <p class="section-intro">Stand-up, jeu d’acteur, tournages et événements : découvre mon univers à travers des extraits de mes prestations et des moments captés sur le terrain.</p>
+
       <div class="performance-feature">
         <div class="performance-caption">
-          <span class="performance-index">GALERIE VIDÉO · TIKTOK</span>
+          <span class="performance-index">VIDÉOS · YOUTUBE &amp; TIKTOK</span>
           <h3>Mes créations, en mouvement</h3>
-          <p>Retrouve ici neuf vidéos de mes réalisations. Appuie sur une vidéo pour la lire ; tu peux aussi l’ouvrir directement sur TikTok.</p>
+          <p>Retrouve mes prestations directement ici ou ouvre-les sur la plateforme de ton choix.</p>
+          <div class="performance-platform-links"><a href="https://www.youtube.com/watch?v=4SqUli9mi6E" target="_blank" rel="noopener noreferrer">▶ YouTube</a><a href="https://vt.tiktok.com/ZSgFd6JcR/" target="_blank" rel="noopener noreferrer">♪ TikTok</a></div>
         </div>
-        <div class="performance-screen performance-screen-intro" aria-hidden="true">
-          <div class="performance-screen-glow"></div>
-          <div class="performance-placeholder">
-            <span class="performance-play">▶</span>
-            <span class="performance-label">Scène · Humour · Audiovisuel</span>
-            <p>Mon univers créatif</p>
-          </div>
-        </div>
+        <div class="performance-screen performance-screen-intro" aria-hidden="true"><div class="performance-screen-glow"></div><div class="performance-placeholder"><span class="performance-play">▶</span><span class="performance-label">Scène · Humour · Audiovisuel</span><p>Mon univers créatif</p></div></div>
       </div>
-      <!-- Galerie/carrousels retirés à la demande de l’utilisateur -->
+      <div class="performance-video-grid" aria-label="Vidéos de mes prestations">
+        <article class="performance-video-card"><div class="performance-video-frame"><iframe src="https://www.youtube-nocookie.com/embed/4SqUli9mi6E" title="Prestation de Rauch Yakine sur YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="performance-video-info"><span class="performance-video-platform">YOUTUBE</span><h3>Prestation vidéo 01</h3><a href="https://youtu.be/4SqUli9mi6E?si=IDgbvjA2XGXegifx" target="_blank" rel="noopener noreferrer">Regarder sur YouTube ↗</a></div></article>
+        <article class="performance-video-card"><div class="performance-video-frame"><iframe src="https://www.youtube-nocookie.com/embed/Rb9fBbK8dGA" title="Prestation de Rauch Yakine sur YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="performance-video-info"><span class="performance-video-platform">YOUTUBE</span><h3>Prestation vidéo 02</h3><a href="https://youtu.be/Rb9fBbK8dGA?si=NMEtEtZuBpPZYRkR" target="_blank" rel="noopener noreferrer">Regarder sur YouTube ↗</a></div></article>
+        <article class="performance-video-card performance-tiktok-card"><div class="performance-video-info"><span class="performance-video-platform">TIKTOK</span><h3>Prestation TikTok</h3><p>Regarde cette vidéo sur TikTok.</p><a href="https://vt.tiktok.com/ZSgFd6JcR/" target="_blank" rel="noopener noreferrer">Regarder sur TikTok ↗</a></div><blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgFd6JcR/" style="max-width:605px;min-width:0"><section><a target="_blank" rel="noopener noreferrer" href="https://vt.tiktok.com/ZSgFd6JcR/">Voir la prestation sur TikTok</a></section></blockquote></article>
+      </div>
       <div class="performance-categories" aria-label="Types de prestations">
         <article class="performance-category"><span>01</span><div><h3>Humour &amp; stand-up</h3><p>Sketches, scène et humour engagé.</p></div><b aria-hidden="true">↗</b></article>
         <article class="performance-category"><span>02</span><div><h3>Acteur &amp; cinéma</h3><p>Jeu, tournages et projets de fiction.</p></div><b aria-hidden="true">↗</b></article>
@@ -759,6 +758,24 @@ footer.portfolio-footer{background:linear-gradient(110deg,#f5c842 0%,#ffd95e 55%
 .footer-identity small{font-size:12px;font-weight:650;color:#242424}
 @media(min-width:600px){.footer-identity{grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:16px;row-gap:6px}.footer-identity strong{grid-column:1}.footer-identity a{grid-column:2;grid-row:1}.footer-identity span{grid-column:1}.footer-identity small{grid-column:2;grid-row:2;text-align:right}}
 @media(max-width:599px){footer.portfolio-footer{padding:12px 0;min-height:0}.portfolio-footer-inner{grid-template-columns:62px minmax(0,1fr);gap:13px}.footer-portrait{width:60px;height:60px;flex-basis:60px}.footer-identity strong{font-size:14px}.footer-identity a{font-size:12px;padding:4px 9px}.footer-identity span{font-size:10px}.footer-identity small{font-size:11px}}
+
+/* Galerie de prestations vidéo : lecture intégrée et liens externes */
+.performance-platform-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.performance-platform-links a,.performance-video-info>a{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid rgba(248,185,35,.55);border-radius:999px;padding:9px 14px;color:var(--text,#f5f5f5);font-weight:750;font-size:13px;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.performance-platform-links a:hover,.performance-video-info>a:hover{background:rgba(248,185,35,.13);transform:translateY(-2px)}
+.performance-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:32px}
+.performance-video-card{min-width:0;overflow:hidden;border:1px solid rgba(248,185,35,.2);border-radius:18px;background:linear-gradient(155deg,rgba(255,255,255,.055),rgba(255,255,255,.018));box-shadow:0 14px 35px #0002}
+.performance-video-frame{position:relative;aspect-ratio:16/9;background:#090a0e;overflow:hidden}
+.performance-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.performance-video-info{padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:9px}
+.performance-video-platform{font-size:10px;letter-spacing:1.5px;font-weight:900;color:var(--gold,#f8b923)}
+.performance-video-info h3{font-size:17px;margin:0}
+.performance-video-info p{font-size:13px;margin:0;color:var(--muted,#aaa);line-height:1.5}
+.performance-video-info>a{margin-top:3px}
+.performance-tiktok-card .tiktok-embed{margin:0 auto;width:100%;min-width:0!important}
+@media(max-width:800px){.performance-video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.performance-video-grid{grid-template-columns:1fr;gap:15px}.performance-video-info{padding:14px}.performance-video-info h3{font-size:16px}}
+
 </style>
 
 <script>
