@@ -181,17 +181,17 @@ main>section:not(.hero) h2{transform:translate3d(0,var(--layer-y,0px),12px)}
 @media(max-width:850px){.about-full .about-hero-grid{grid-template-columns:minmax(0,1fr) minmax(130px,.55fr);gap:18px}.about-full .about-photo{justify-self:end;max-width:230px}.about-full .about-stats .stats-grid{width:calc(100% - 20px)}}@media(max-width:520px){.about-full .about-hero-grid{grid-template-columns:1fr}.about-full .about-photo{justify-self:start;max-width:220px}.about-full .about-stats .stat-item{padding:8px 4px}.about-full .about-stats .stat-item span{font-size:.58rem}}
 
 
-/* Effet de panne de chaîne TV : balayage, parasites et micro-coupures */
-.about-full .about-photo{perspective:1000px;filter:drop-shadow(0 18px 32px #0009)}
-.about-full .about-photo .portrait-frame{overflow:hidden;position:relative;border-radius:8px;isolation:isolate;transform-style:preserve-3d;border:1px solid #f8b92388;box-shadow:0 0 0 1px #f8b92322,0 0 22px #f8b92320,0 24px 50px #0008;animation:tv-frame-flicker 6.8s steps(1,end) infinite}
-.about-full .about-photo .portrait-frame:before{content:"";position:absolute;z-index:3;inset:0;pointer-events:none;background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,#02030870 4px,#02030870 5px),linear-gradient(90deg,#ff183b12,transparent 25%,transparent 75%,#26d9ff12);opacity:.48;mix-blend-mode:screen;animation:tv-scanlines 7s linear infinite}
-.about-full .about-photo .portrait-frame:after{content:"";position:absolute;z-index:4;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 0 36%,#fff8 37%,#ff274055 38%,transparent 42%),linear-gradient(90deg,#ff003322,transparent 28%,transparent 70%,#00eaff22);opacity:0;mix-blend-mode:screen;animation:tv-signal-break 6.8s steps(1,end) infinite}
-.about-full .about-photo .portrait-photo{transform-origin:center;will-change:transform,filter;animation:tv-image-interference 6.8s steps(1,end) infinite}
-@keyframes tv-frame-flicker{0%,3%,5%,48%,50%,52%,100%{opacity:1;filter:brightness(1)}4%,49%,51%{opacity:.88;filter:brightness(1.25)}}
-@keyframes tv-scanlines{0%{background-position:0 0,0 0}100%{background-position:0 24px,0 0}}
-@keyframes tv-signal-break{0%,37%,43%,100%{opacity:0;clip-path:inset(50% 0 50% 0)}38%{opacity:.9;clip-path:inset(35% 0 52% 0);transform:translateX(-3px)}39%{opacity:.65;clip-path:inset(62% 0 24% 0);transform:translateX(4px)}40%{opacity:1;clip-path:inset(44% 0 43% 0);transform:translateX(-2px)}41%{opacity:.2;clip-path:inset(18% 0 73% 0);transform:translateX(3px)}42%{opacity:.85;clip-path:inset(72% 0 14% 0);transform:translateX(-4px)}}
-@keyframes tv-image-interference{0%,37%,43%,100%{transform:translate(0,0) scale(1);filter:none}38%{transform:translate(-2px,0) scale(1.012);filter:contrast(1.2) saturate(1.3)}39%{transform:translate(3px,1px) scale(1.008);filter:brightness(1.25) contrast(1.3)}40%{transform:translate(-1px,0) scale(1);filter:hue-rotate(18deg) contrast(1.25)}41%{transform:translate(2px,-1px);filter:brightness(.78) saturate(1.5)}42%{transform:translate(-3px,0);filter:contrast(1.35) saturate(1.25)}}
-@media(prefers-reduced-motion:reduce){.about-full .about-photo .portrait-frame,.about-full .about-photo .portrait-photo,.about-full .about-photo .portrait-frame:before,.about-full .about-photo .portrait-frame:after{animation:none}}
+/* Animation cinématique spectaculaire de la photo À propos */
+.about-full .about-photo{perspective:1000px;filter:drop-shadow(0 20px 35px #0008)}
+.about-full .about-photo .portrait-frame{overflow:hidden;position:relative;border-radius:12px;isolation:isolate;transform-style:preserve-3d;border:1px solid #f3c94d88;box-shadow:0 0 0 1px #f3c94d22,0 0 24px #f3c94d22,0 24px 55px #0008;animation:portrait-cinematic-float 5s ease-in-out infinite,portrait-cinematic-glow 4s ease-in-out infinite}
+.about-full .about-photo .portrait-frame:before{content:"";position:absolute;z-index:3;inset:-70% -100%;pointer-events:none;background:linear-gradient(115deg,transparent 39%,#ffffff05 45%,#fff9 50%,#7cf7e9aa 52%,transparent 59%);transform:translateX(-100%) rotate(8deg);animation:portrait-cinematic-sweep 5.5s ease-in-out infinite}
+.about-full .about-photo .portrait-frame:after{content:"";position:absolute;z-index:2;inset:0;pointer-events:none;background:linear-gradient(180deg,#07131b00 55%,#06101899 100%),radial-gradient(ellipse at 50% 0%,#fff2,transparent 60%);mix-blend-mode:screen}
+.about-full .about-photo .portrait-photo{transform-origin:center;will-change:transform,filter;animation:portrait-cinematic-zoom 9s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes portrait-cinematic-float{0%,100%{transform:translateY(0) rotateX(0) rotateY(-1deg)}50%{transform:translateY(-10px) rotateX(1.4deg) rotateY(1deg)}}
+@keyframes portrait-cinematic-glow{0%,100%{box-shadow:0 0 0 1px #f3c94d22,0 0 16px #f3c94d22,0 24px 55px #0008}50%{box-shadow:0 0 0 1px #75f2e8aa,0 0 32px #75f2e855,0 24px 55px #0008}}
+@keyframes portrait-cinematic-sweep{0%,15%{transform:translateX(-100%) rotate(8deg);opacity:0}30%{opacity:1}65%,100%{transform:translateX(100%) rotate(8deg);opacity:0}}
+@keyframes portrait-cinematic-zoom{0%,100%{transform:scale(1)}50%{transform:scale(1.065)}}
+@media(prefers-reduced-motion:reduce){.about-full .about-photo .portrait-frame,.about-full .about-photo .portrait-photo,.about-full .about-photo .portrait-frame:before{animation:none}}
 </style>
 </head>
 <body>
